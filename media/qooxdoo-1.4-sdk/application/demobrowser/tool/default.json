@@ -1,0 +1,82 @@
+{
+  "jobs" :
+  {
+    /*
+      uses: (e.g. for demo "ui.Widget")
+        DPACKAGE  ("ui") - containing package, required
+        DSNAME    ("Widget") - simple demo name, required
+        DNAME     ("ui.Widget") - demo name, provided
+        DCLASS    ("demobrowser.demo.ui.Widget") - demo class id, provided
+        BUILDTYPE ("source") - source or build, provided
+    */
+
+    // -- common stuff ----
+
+    "default-demo" :
+    {
+      "let" : {
+        "APPLICATION" : "demobrowser.demo",
+        "DNAME"       : "${DPACKAGE}.${DSNAME}",
+        "DCLASS"      : "${APPLICATION}.${DNAME}",
+        "LOCALES"     : ["en", "en_US", "de", "de_DE", "fr", "fr_FR"]
+      },
+      "library" : [
+        { "manifest" : "../../framework/Manifest.json" },
+        { "manifest" : "Manifest.demo.json" }
+      ],
+      "include" : [
+        "${DCLASS}",
+        "${DTHEME}",
+        "qx.log.appender.Native",
+        "qx.log.appender.Console",
+        "qx.dev.ObjectSummary",
+        "qx.dev.Pollution"
+      ],
+      "asset-let" : {
+        "qx.icontheme" : ["Oxygen", "Tango"],
+        "qx.theme"     : ["Classic", "Modern", "Simple"]
+      },
+      "cache" : { "compile" : "${TMPDIR}/qx${QOOXDOO_VERSION}/cache" },
+      "environment" : {
+        "qx.application" : "${DCLASS}",
+        "qx.theme"       : "${DTHEME}",
+        "qx.allowUrlVariants" : true,
+        "qx.allowUrlSettings" : true
+      },
+      "compile-options" : {
+        "paths" : {
+          "file"     : "${BUILDTYPE}/script/${DCLASS}-${DTHEME}.js",
+          "app-root" : "${BUILDTYPE}/demo/yyy"
+        },
+        "uris" : {
+          "script"   : "../../script",
+          "resource" : "../../resource"
+        },
+        "code" : {
+          "locales"  : "${LOCALES}",
+          "format"   : true
+        }
+      }
+    }
+
+    // -- generic jobs for *-Classic, *-Modern ----------
+
+    ,"default-Classic" :
+    {
+      "let"     : {"DTHEME" : "qx.theme.Classic"},
+      "compile" : { "type"  : "${BUILDTYPE}" }
+    }
+
+    ,"default-Modern" :
+    {
+      "let"     : {"DTHEME" : "qx.theme.Modern"},
+      "compile" : { "type"  : "${BUILDTYPE}" }
+    }
+    
+    ,"default-Simple" :
+    {
+      "let"     : {"DTHEME" : "qx.theme.Simple"},
+      "compile" : { "type"  : "${BUILDTYPE}" }
+    }
+  }
+}

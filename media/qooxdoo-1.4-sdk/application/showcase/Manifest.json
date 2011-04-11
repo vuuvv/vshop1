@@ -1,0 +1,34 @@
+{
+  "info" : 
+  {
+    "name" : "showcase",
+
+    "summary" : "Showcase",
+    "description" : "This app demonstrates many features of qooxdoo.",
+    
+    "homepage" : "http://demo.qooxdoo.org/current/showcase",
+
+    "license" : "LGPL/EPL",
+    "authors" : 
+    [
+      {
+        "name" : "Martin Wittemann (martinwittemann)",
+        "email" : "martin.wittemann@1und1.de"
+      }
+    ],
+
+    "version" : "trunk",
+    "qooxdoo-versions": ["1.4"]
+  },
+  
+  "provides" : 
+  {
+    "namespace"   : "showcase",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "type"        : "application"
+  }
+}
+

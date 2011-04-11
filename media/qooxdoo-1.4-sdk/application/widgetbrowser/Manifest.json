@@ -1,0 +1,34 @@
+{
+  "info" : 
+  {
+    "name" : "widgetbrowser",
+
+    "summary" : "Widget browser",
+    "description" : "This app demonstrates many widgets of qooxdoo.",
+    
+    "homepage" : "http://demo.qooxdoo.org/current/widgetbrowser",
+
+    "license" : "LGPL/EPL",
+    "authors" : 
+    [
+      {
+        "name" : "Tristan Koch (tristankoch)",
+        "email" : "tristan.koch@1und1.de"
+      }
+    ],
+
+    "version" : "trunk",
+    "qooxdoo-versions": ["1.4"]
+  },
+  
+  "provides" : 
+  {
+    "namespace"   : "widgetbrowser",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "type"        : "application"
+  }
+}
+
