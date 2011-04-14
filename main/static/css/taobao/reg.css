@@ -1,0 +1,100 @@
+li {
+	list-style: none outside none;
+}
+
+.hd {
+	height: 44px;
+	background: url("images/banner.png") repeat scroll 0 0 transparent;
+}
+
+.hd h2 {
+	height: 40px;
+	overflow: hidden;
+}
+
+.hd h2.title {
+    background: url("images/reg_title.png") no-repeat scroll 0 0 transparent;
+    text-indent: -23556px;
+}
+
+.hd h2.step1 {
+	background-position: 0 13px;
+}
+
+.reg-form {
+    margin: 0 auto 20px;
+    padding: 10px 0 0 0;
+    position: relative;
+    width: 450px;
+	float: left;
+}
+
+.agreements {
+	float: left;
+	height: 360px;
+	width: 450px;
+	border: 1px solid #E9E9E9;
+    margin: 15px 0 0 10px;
+    overflow: auto;
+    padding: 2px;
+}
+
+li.field {
+	height: 46px;
+	padding: 10px 2px 2px;
+}
+
+li.field .input {
+	float: left;
+	width: 316px;
+}
+
+li.field label {
+    float: left;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    width: 98px;
+}
+
+.field-text, input.field-captcha{
+    border: 1px solid #DB9238;
+    font-size: 14px;
+    height: 24px;
+    margin: 0 5px;
+    padding: 2px;
+    width: 196px;
+	background: url("images/input.png") no-repeat scroll 0 0 white;
+}
+
+input.field-captcha {
+	vertical-align: top;
+	width: 85px;
+}
+
+.captcha {
+    border: 1px solid #E4E4E4;
+    height: 26px;
+    width: 100px;
+}
+.submit-field {
+    padding: 20px 0;
+}
+.submit-field .input {
+    margin-left: 106px;
+}
+
+.submit-btn {
+    background: url("images/reg_btn.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    margin-right: 13px;
+    text-indent: -23556px;
+}
+
+.submit-btn {
+    height: 33px;
+    width: 180px;
+}
+

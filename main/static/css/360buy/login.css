@@ -1,0 +1,90 @@
+.hd, .bd, .ft {
+	overflow: hidden;
+}
+
+.hd {
+	background: url("images/tit_regist.jpg") repeat-x scroll 0 -34px #D1D1D1;
+	height: 33px;
+}
+
+.hd h2 {
+	background: url("images/tit_regist.jpg") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 33px;
+	line-height: 33px;
+	padding-left: 15px;
+}
+.hd b {
+	background: url("images/tit_regist.jpg") no-repeat scroll 0 -68px transparent;
+	float: right;
+	height: 33px;
+	width: 10px;
+}
+
+.bd {
+	padding: 20px;
+	border: solid #D1D1D1;
+	border-width: 0 1px 1px;
+}
+
+.bd .form {
+    float: left;
+    overflow: hidden;
+    width: 600px;
+}
+
+.login-box .field {
+    height: 50px;
+    line-height: 26px;
+    padding-top: 5px;
+	overflow: hidden;
+}
+
+.login-box .field label {
+    display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+    width: 150px;
+}
+
+#id_username, #id_password {
+    border: 1px solid #BBBBBB;
+    font-family: arial,"宋体";
+    font-size: 14px;
+    height: 16px;
+    padding: 4px 3px;
+    width: 240px;
+}
+
+.login-box #options {
+	height: 40px;
+}
+.long-login {
+    color: #999999;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 2px 0 2px 3px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 5;
+}
+.long-login-help {
+    background: url("images/stuff.png") no-repeat scroll -325px -367px transparent;
+    display: inline-block;
+    font-size: 0;
+    height: 12px;
+    overflow: hidden;
+    text-indent: -1000px;
+    vertical-align: middle;
+    width: 12px;
+}
+.bd .guide {
+    border-left: 1px solid #E7E7E7;
+    float: right;
+    height: 220px;
+    padding: 60px 0 20px 20px;
+    width: 300px;
+}
+

@@ -1,0 +1,219 @@
+select, input, button, textarea {
+    font: 100% Tahoma,Helvetica,Arial,sans-serif;
+}
+
+.login-box {
+	min-height: 304px;
+	padding: 48px 0 48px 490px;
+	position: relative;
+	width: 327px;
+	z-index: 1;
+}
+
+.login-box li {
+	list-style: none outside none;
+}
+
+.login-bg {
+	height: 400px;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.login-box .hd {
+	background: url("images/box_bg.png") no-repeat scroll 325px 0 transparent;
+	height: 36px;
+}
+
+.login-box .hd li {
+	float: left;
+	height: 36px;
+	margin-right: -1px;
+	width: 163px;
+}
+
+.login-box .hd h2, .login-box .hd a {
+	background: url("images/box_bg.png") no-repeat scroll -400px 0 transparent;
+	display: block;
+	height: 36px;
+	overflow: hidden;
+	text-indent: 45px;
+}
+
+.login-box .hd h2 {
+	color: #000000;
+	cursor: default;
+	font-size: 14px;
+	line-height: 38px;
+	position: relative;
+	z-index: 1;
+}
+
+.login-box .hd a {
+	background-position: -10px 0;
+	color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 36px;
+	text-decoration: none;
+}
+
+.login-box .bd {
+    background: url("images/box_bg.png") repeat-y scroll -600px 0 transparent;
+    padding: 0 6px 0 4px;
+}
+
+.login-box .bd .member-box, .login-box .bd .agent-box {
+    background: url("images/box_bg.png") no-repeat scroll -604px 0 #FAFAFA;
+    padding: 10px 0;
+}
+.login-box .text {
+    padding-top: 12px;
+}
+.login-box .text label {
+    display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+    width: 66px;
+}
+.text input{
+    border: 1px solid #C8C8C8;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 3px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 180px;
+}
+.login-box .options, .login-box .submit {
+    overflow: hidden;
+    padding: 10px 0 0 80px;
+}
+.long-login {
+    color: #999999;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    padding: 2px 0 2px 3px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 5;
+}
+.login-box .options input {
+    margin-right: 6px;
+}
+.login-box .options input {
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.login-box .options label {
+    color: #AAAAAA;
+    vertical-align: middle;
+}
+.long-login-help {
+    background: url("images/stuff.png") no-repeat scroll -325px -367px transparent;
+    display: inline-block;
+    font-size: 0;
+    height: 12px;
+    overflow: hidden;
+    text-indent: -1000px;
+    vertical-align: middle;
+    width: 12px;
+}
+.login-box .options, .login-box .submit {
+    overflow: hidden;
+    padding: 10px 0 0 80px;
+}
+.login-box .submit {
+    clear: both;
+    overflow: hidden;
+    padding: 5px 0 0 80px;
+}
+.login-box .submit button {
+    background: url("images/stuff.png") no-repeat scroll 0 -100px transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 27px;
+    line-height: 100px;
+    margin-right: 6px;
+    overflow: hidden;
+    text-indent: -9999px;
+    vertical-align: middle;
+    width: 86px;
+}
+.login-box .forget-pw {
+    color: #808080;
+    line-height: 26px;
+	text-decoration: none;
+}
+.login-box .forget-pw:hover {
+    color: #ff6600;
+    line-height: 26px;
+	text-decoration: underline;
+}
+.login-box ul.entries {
+    background: url("images/stuff.png") repeat-x scroll 0 -258px transparent;
+    height: 18px;
+    margin: 10px 20px 0 24px;
+    padding-left: 48px;
+    padding-top: 8px;
+}
+.login-box ul.entries li {
+    background: url("images/stuff.png") no-repeat scroll -337px -225px transparent;
+    float: left;
+    padding: 0 10px;
+}
+
+.login-box ul.entries a {
+    color: #808080;
+	text-decoration: none;
+}
+
+.login-box ul.entries a:hover {
+    color: #FF6600;
+	text-decoration: underline;
+}
+.login-box .ft {
+    background: url("images/box_bg.png") no-repeat scroll -950px bottom transparent;
+    font-size: 0;
+    height: 6px;
+}
+.login-mirrow {
+    background: url("images/visitor_bg.png") no-repeat scroll 0 0 transparent;
+    height: 46px;
+    padding: 10px 10px 0;
+    text-align: center;
+}
+
+.login-box p.errornote {
+	background: url("images/stuff.png") no-repeat scroll -319px -449px #FFF2F2;
+    background-position: -319px -449px;
+    line-height: 18px;
+    padding: 2px 10px 2px 23px;
+	border: 1px solid #FF8080;
+	margin: 0 20px;
+	overflow: hidden;
+}
+
+.login-box ul.errorlist {
+    margin-left: 80px;
+    margin-right: 50px;
+    margin-top: 4px;
+	color: red;
+}
+
+.login-box ul.errorlist li{
+    background: url("images/stuff.png") repeat scroll -325px -59px ;
+    padding: 3px 15px;
+}
+.error input {
+	border: 1px solid red;
+	outline: 1px solid #ffc1c1;
+}
+

@@ -1,0 +1,51 @@
+{% extends "frame.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/360buy/login.css" />
+{% endblock %}
+
+{% block content %}
+<div class="login">
+	<div class="login-box">
+		<div class="hd">
+			<h2>Member Login</h2>
+			<b></b>
+		</div>
+		<div class="bd">
+			<div class="form">
+				<form id="login-form" method="post" action="">
+					{% for field in form %}
+					<div class="field">
+						{{ field.label_tag }}&nbsp;{{ field }}
+						{{ field.errors }}
+					</div>
+					{% endfor %}
+					<div id="options" class="field">
+						<span class="long-login" style="visibility: visible;">
+							<input type="checkbox" class="longlogin" id="longlogin"><label for="longlogin">Remember in two weeks</label>
+						</span>
+						<a href="#" target="_blank" title="Support" id="support" class="long-login-help" style="visibility: visible;">Support</a>
+					</div>
+					<div class="submit">
+						<button tabindex="3" class="J_Submit" type="submit">Submit</button>
+						<a class="forget-pw" id="forget-pw-safe" target="_blank" href="">Forget Password</a>
+					</div>
+					<ul class="entries">	
+						<li id="registerUrl_1">
+							<a target="_blank" href="#">Register Free</a>
+						</li>
+					</ul>
+				</form>
+			</div>
+			<div class="guide">
+				<h5></h5>
+				<div class="content"></div>
+				<a href="registpersonal.aspx" class="btn-link btn-personal">Register</a>
+				<div class="btns"><a href="#">XXXX</a><a href="#">XXXX</a></div>
+			</div>
+		</div>
+		<div class="ft">
+		</div>
+	</div>
+	<div class="login-bg"></div>
+</div>
+{% endblock %}

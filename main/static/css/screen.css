@@ -1,0 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	color: #404040;
+}
+
+body {
+	font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+}
+
+#page {
+	margin: 0 auto;
+	width: 960px;
+}
