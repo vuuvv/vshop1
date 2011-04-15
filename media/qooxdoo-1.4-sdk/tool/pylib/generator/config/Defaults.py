@@ -34,7 +34,7 @@ def getQooxdooRevision():
     if rcode > 0 or out == "exported":
         return "unknown"
     else:
-        return out.rstrip()
+        return "unknown" #out.rstrip()
         
 
 def getUserHome(default=""):

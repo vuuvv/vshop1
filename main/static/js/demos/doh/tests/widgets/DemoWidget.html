@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>DemoWidget Browser Tests</title>
+        <script type="text/javascript" src="../../../../dojo/dojo.js" 
+                djConfig="isDebug: true, parseOnLoad: true"></script>
+        <script type="text/javascript">
+        dojo.provide("demos.doh.tests.widgets.DemoWidgetHTML");
+        dojo.require("dojo.parser");
+        dojo.require("doh.runner");
+        dojo.require("demos.doh.DemoWidget");
+        
+        dojo.addOnLoad(function(){
+        	doh.register("demos.doh.tests.widgets.DemoWidget", [
+        		function test_DemoWidget_getValue(){
+					//	summary:
+					//		Simple test of the Widget getValue() call.
+	                doh.assertEqual("default", dijit.byId("demoWidget").getValue()); 
+        		},
+        		function test_DemoWidget_setValue(){
+					//	summary:
+					//		Simple test of the Widget setValue() call.
+                    var demoWidget = dijit.byId("demoWidget");
+                    demoWidget.setValue("Changed Value");
+	                doh.assertEqual("Changed Value", demoWidget.getValue()); 
+        		}
+        	]);
+			//Execute D.O.H. in this remote file.
+        	doh.run();
+        });
+        </script>
+    </head>
+    <body>
+        <!-- Define an instance of the widget to test. -->
+        <div id="demoWidget" dojoType="demos.doh.DemoWidget" value="default"></div>
+    </body>
+</html>
