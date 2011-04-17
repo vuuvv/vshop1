@@ -35,23 +35,22 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 		__failed: null,
 
 		_applyState: function(value, old) {
-			this.debug(value);
 			switch (value) {
 				case "initialized":
 				case "loading":
-					this.getContent().setVisibility("excluded");
-					this.getFailedPage().setVisibility("excluded");
-					this.getLoadingPage().setVisibility("visible");
+					this.getContent().exclude();
+					this.getFailedPage().exclude();
+					this.getLoadingPage().show();
 					break;
 				case "completed":
-					this.getLoadingPage().setVisibility("excluded");
-					this.getFailedPage().setVisibility("excluded");
-					this.getContent().setVisibility("visible");
+					this.getLoadingPage().exclude();
+					this.getFailedPage().exclude();
+					this.getContent().show();
 					break;
 				case "failed":
-					this.getContent().setVisibility("excluded");
-					this.getLoadingPage().setVisibility("excluded");
-					this.getFailedPage().setVisibility("visible");
+					this.getContent().exclude();
+					this.getLoadingPage().exclude();
+					this.getFailedPage().show();
 					break;
 			}
 		},

@@ -2,7 +2,7 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 	extend: vuuvv.ui.LoadingPage,
 
 	construct: function() {
-		this.base(arguments, "/admin/appdata");
+		this.base(arguments, "/manage/appdata");
 	},
 
 	members: {
