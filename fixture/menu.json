@@ -1,0 +1,123 @@
+[
+	{
+		"model": "main.Menu",
+		"pk": 1,
+		"fields": {
+			"label": "System",
+			"tooltip": "",
+			"icon": "",
+			"command": "System",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 2,
+		"fields": {
+			"label": "Login",
+			"tooltip": "",
+			"icon": "",
+			"command": "Login",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 3,
+		"fields": {
+			"label": "User",
+			"tooltip": "",
+			"icon": "",
+			"command": "User",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 4,
+		"fields": {
+			"label": "Group",
+			"tooltip": "",
+			"icon": "",
+			"command": "Group",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 5,
+		"fields": {
+			"label": "Permission",
+			"tooltip": "",
+			"icon": "",
+			"command": "Permission",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 6,
+		"fields": {
+			"label": "Pages",
+			"tooltip": "",
+			"icon": "",
+			"command": "Pages",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 7,
+		"fields": {
+			"label": "Nav",
+			"tooltip": "",
+			"icon": "",
+			"command": "Nav",
+			"parent": 5
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 8,
+		"fields": {
+			"label": "Page",
+			"tooltip": "",
+			"icon": "",
+			"command": "Page",
+			"parent": 5
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 9,
+		"fields": {
+			"label": "Help",
+			"tooltip": "",
+			"icon": "",
+			"command": "Help",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 10,
+		"fields": {
+			"label": "About",
+			"tooltip": "",
+			"icon": "",
+			"command": "About",
+			"parent": 8
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 11,
+		"fields": {
+			"label": "Menu",
+			"tooltip": "",
+			"icon": "",
+			"command": "Menu",
+			"parent": 1
+		}
+	}
+]

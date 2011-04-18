@@ -39,6 +39,8 @@ qx.Class.define("vuuvv.Global", {
 
 		getIcon: function(name) {
 			return vuuvv.Global.icons[name.toLowerCase()];
-		}
+		},
+
+		csrf_token: null
 	}
 });

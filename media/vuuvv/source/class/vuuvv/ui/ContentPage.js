@@ -2,11 +2,13 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 	extend: vuuvv.ui.LoadingPage,
 
 	construct: function() {
-		this.base(arguments, "/admin/appdata");
+		this.base(arguments, "/manage/appdata");
 	},
 
 	members: {
 		setupPage: function(data) {
+			var login = new vuuvv.ui.LoginDialog();
+			login.show();
 			//var appdata = data.appdata;
 			//var container = this._container;
 			//this.__menubar = new vuuvv.ui.view.Menubar(appdata.menus);
@@ -53,9 +55,8 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 			//return container;
 		},
 
-		createPage: function() {
-			this._container = new qx.ui.container.Composite(new qx.ui.layout.VBox());
-			return this._container;
+		createContentPage: function() {
+			return this.base(arguments);
 		}
 	}
 });

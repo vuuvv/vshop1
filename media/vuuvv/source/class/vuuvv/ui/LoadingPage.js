@@ -39,19 +39,19 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 			switch (value) {
 				case "initialized":
 				case "loading":
-					this.getContent().setVisibility("excluded");
-					this.getFailedPage().setVisibility("excluded");
-					this.getLoadingPage().setVisibility("visible");
+					this.getContent().exclude();
+					this.getFailedPage().exclude();
+					this.getLoadingPage().show();
 					break;
 				case "completed":
-					this.getLoadingPage().setVisibility("excluded");
-					this.getFailedPage().setVisibility("excluded");
-					this.getContent().setVisibility("visible");
+					this.getLoadingPage().exclude();
+					this.getFailedPage().exclude();
+					this.getContent().show();
 					break;
 				case "failed":
-					this.getContent().setVisibility("excluded");
-					this.getLoadingPage().setVisibility("excluded");
-					this.getFailedPage().setVisibility("visible");
+					this.getContent().exclude();
+					this.getLoadingPage().exclude();
+					this.getFailedPage().show();
 					break;
 			}
 		},
@@ -94,7 +94,7 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 				return;
 			this.setState("loading");
 
-			var req = new qx.io.remote.Request(url);
+			var req = new qx.io.remote.Request(url, "GET", "application/json");
 			req.setTimeout(180000);
 			req.setProhibitCaching(false);
 
@@ -104,8 +104,9 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 		},
 
 		_onCompleted: function(e) {
-			//var data = eval("(" + e.getContent() + ")");
-			//this.setupPage(data);
+			var data = e.getContent();
+			vuuvv.Global.csrf_token = data.csrf;
+			this.setupPage(data);
 			this.setState("completed");
 		},
 
