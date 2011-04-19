@@ -35,7 +35,6 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 		__failed: null,
 
 		_applyState: function(value, old) {
-			this.debug(value);
 			switch (value) {
 				case "initialized":
 				case "loading":

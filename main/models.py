@@ -1,14 +1,22 @@
 from django.db import models
+from django.db.models.base import ModelBase
 
-<<<<<<< HEAD
-class Menu(models.Model):
+class BaseMetaClass(ModelBase):
+	def __new__(cls, name, bases, attrs):
+		klass = super(BaseMetaClass, cls).__new__(cls, name, bases, attrs)
+		klass._meta.permissions.append(('view_' + klass._meta.module_name, u'Can view %s' % klass._meta.verbose_name))
+		return klass
+
+class BaseModel(models.Model):
+	__metaclass__ = BaseMetaClass
+
+	class Meta:
+		abstract = True
+
+class Menu(BaseModel):
 	label = models.CharField(max_length=128)
 	tooltip = models.CharField(max_length=128)
 	icon = models.CharField(max_length=128)
 	command = models.CharField(max_length=128)
 	parent = models.ForeignKey('self', null=True, blank=True, related_name="children")
 
-=======
-class Test(models.Model):
-	name = models.CharField(max_length=255)
->>>>>>> 60d7f183d0f6d2952005fbe0c1a421a6a5964244

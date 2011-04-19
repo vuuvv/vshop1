@@ -2,11 +2,12 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 	extend: vuuvv.ui.LoadingPage,
 
 	construct: function() {
-		this.base(arguments, "/manage/appdata");
+		this.base(arguments, vuuvv.Global.getUrl("appdata"));
 	},
 
 	members: {
 		setupPage: function(data) {
+			console.log(data);
 			var login = new vuuvv.ui.LoginDialog();
 			login.show();
 			//var appdata = data.appdata;

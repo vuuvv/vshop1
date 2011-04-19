@@ -46,7 +46,7 @@ qx.Class.define("vuuvv.ui.LoginDialog", {
 
 		onLogin: function() {
 			if (this.__form.validate()) {
-				var req = new qx.io.remote.Request("/manage/login", "POST", "application/json");
+				var req = new qx.io.remote.Request(vuuvv.Global.getUrl("login"), "POST", "application/json");
 				req.setTimeout(180000);
 				req.setProhibitCaching(false);
 

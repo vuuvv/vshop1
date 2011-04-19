@@ -7,8 +7,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^media/(.*)$', 'main.views.media'),
-	url(r'^manage/appdata', 'main.admin.appdata'),
-	url(r'^manage/login', 'main.admin.login'),
 	url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'', include(main.urls)),

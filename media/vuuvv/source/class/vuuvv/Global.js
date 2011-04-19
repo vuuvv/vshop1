@@ -7,6 +7,8 @@
 ************************************************************************ */
 qx.Class.define("vuuvv.Global", {
 	statics: {
+		csrf_token: null,
+
 		icons: {
 			"new": "icon/22/actions/document-new.png",
 			"edit": "icon/22/actions/document-properties.png",
@@ -38,9 +40,16 @@ qx.Class.define("vuuvv.Global", {
 		},
 
 		getIcon: function(name) {
-			return vuuvv.Global.icons[name.toLowerCase()];
+			return vuuvv.Global.icons[name.toLowerCase()] || null;
 		},
 
-		csrf_token: null
+		urls: {
+			"login": "/manage/login",
+			"appdata": "/manage/appdata"
+		},
+
+		getUrl: function(name) {
+			return vuuvv.Global.urls[name.toLowerCase()] || null;
+		}
 	}
 });
