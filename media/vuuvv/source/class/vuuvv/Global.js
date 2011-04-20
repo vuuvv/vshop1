@@ -50,6 +50,8 @@ qx.Class.define("vuuvv.Global", {
 
 		getUrl: function(name) {
 			return vuuvv.Global.urls[name.toLowerCase()] || null;
-		}
+		},
+
+		query_prefix: "/manage"
 	}
 });

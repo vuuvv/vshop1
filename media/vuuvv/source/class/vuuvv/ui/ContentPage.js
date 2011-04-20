@@ -8,13 +8,22 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 	members: {
 		setupPage: function(data) {
 			console.log(data);
-			var login = new vuuvv.ui.LoginDialog();
-			login.show();
-			//var appdata = data.appdata;
-			//var container = this._container;
-			//this.__menubar = new vuuvv.ui.view.Menubar(appdata.menus);
-			//appdata.menus = this.__menubar.getModel();
-			//container.add(this.__menubar, {flex: 0});
+			if (data.user.id === null) {
+				var login = new vuuvv.ui.LoginDialog();
+				login.addListener("success", function() {
+					this.reload();
+				}, this);
+				login.show();
+				return;
+			} else if (data.type == "error") {
+				alert(data.message);
+			} else {
+				//var appdata = data.appdata;
+				var container = this.getContent();
+				this.__menubar = new vuuvv.ui.Menubar(data.value.Menu);
+				//appdata.menus = this.__menubar.getModel();
+				container.add(this.__menubar, {flex: 0});
+			}
 
 			//var mainsplit = new qx.ui.splitpane.Pane("horizontal");
 			//container.add(mainsplit, {flex: 1});
@@ -57,7 +66,7 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 		},
 
 		createContentPage: function() {
-			return this.base(arguments);
+			return new qx.ui.container.Composite(new qx.ui.layout.VBox);
 		}
 	}
 });

@@ -7,7 +7,7 @@ from models import Menu
 @login_required
 def appdata(request):
 	value = {
-		"Menu": Menu.objects.all(),
+		"Menu": list(Menu.objects.all().values()),
 	}
 	return ajax_response(request, "success", "", value)
 
@@ -30,6 +30,36 @@ def query(request, cls):
 	obj = doquery(request, cls)
 	return list(obj)
 
+@model_query("view")
+def count(request, cls):
+	obj = doquery(request, cls)
+	return obj.count()
+
+@model_query("add")
+def save(request, cls):
+	ret = {"create": False, "id": None}
+	post = request.POST
+	fields = dict([(a.attname, post.get(a.attname)) for a in cls._meta.fields if a.attname in post])
+	id = int(fields["id"])
+	if id == -1:
+		ret["create"] = True
+		fields.pop("id")
+	model = cls(**fields)
+	model.save()
+	ret["id"] = model.id
+	return ret
+
+@model_query("delete")
+def delete(request, cls):
+	conditions = request.POST.get("conditions", [])
+	kwargs = {}
+	if conditions:
+		conditions = json.loads(conditions)
+	conditions = dict(json.loads(conditions) if conditions else [])
+	obj = cls.objects.filter(**kwargs)
+	obj.delete()
+	return "deleted"
+
 def doquery(request, cls, related=False):
 	fields = request.POST.get("fields", None)
 	conditions = request.POST.get("conditions", None)
@@ -41,7 +71,7 @@ def doquery(request, cls, related=False):
 		if fields and "id" not in fields:
 			fields.append("id")
 	fields = fields if fields else get_fields_name(cls)
-	conditions = json.loads(conditions) if conditions else {}
+	conditions = dict(json.loads(conditions) if conditions else [])
 	orderby = json.loads(orderby) if orderby else []
 	limit = json.loads(limit) if limit else None
 

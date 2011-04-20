@@ -59,6 +59,10 @@ qx.Class.define("vuuvv.ui.LoadingPage", {
 			this.load(value);
 		},
 
+		reload: function() {
+			this.load(this.getUrl());
+		},
+
 		getFailedPage: function() {
 			if (this.__failed)
 				return this.__failed;

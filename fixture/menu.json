@@ -73,7 +73,7 @@
 			"tooltip": "",
 			"icon": "",
 			"command": "Nav",
-			"parent": 5
+			"parent": 6
 		}
 	},
 	{
@@ -84,7 +84,7 @@
 			"tooltip": "",
 			"icon": "",
 			"command": "Page",
-			"parent": 5
+			"parent": 6
 		}
 	},
 	{
@@ -106,7 +106,7 @@
 			"tooltip": "",
 			"icon": "",
 			"command": "About",
-			"parent": 8
+			"parent": 9
 		}
 	},
 	{
@@ -117,6 +117,17 @@
 			"tooltip": "",
 			"icon": "",
 			"command": "Menu",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Menu",
+		"pk": 12,
+		"fields": {
+			"label": "Reload",
+			"tooltip": "",
+			"icon": "",
+			"command": "Reload",
 			"parent": 1
 		}
 	}

@@ -1,6 +1,12 @@
 qx.Class.define("vuuvv.Utils", {
 	statics: {
-		showLogginDialog: function() {
-		}
+		/**
+		 * [] is False
+		 */
+		isFalse: function(value) {
+			if (qx.lang.Type.isArray(value) && value.length === 0)
+				return false;
+			return !!value;
+		},
 	}
 });

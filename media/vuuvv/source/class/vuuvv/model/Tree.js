@@ -129,6 +129,7 @@ qx.Class.define("vuuvv.model.Tree", {
 			root.setLabel("---");
 			root.setId(null);
 			var lookup = {};
+			var _lookup = {};
 
 			// this loop is assign the normal properties to the model class object
 			for (var i = 0; i < data.length; i++) {
@@ -140,17 +141,18 @@ qx.Class.define("vuuvv.model.Tree", {
 					if (p != 'children' || p != 'parent')
 						model.set(p, item[p]);
 				}
-				lookup[i] = model;
+				lookup[item.id] = model;
+				_lookup[item.id] = item;
 			}
 
 			// this loop make the parent children relationship
 			for (var i in lookup) {
-				var pid = data[i][parentPath];
+				var pid = _lookup[i][parentPath];
 				var item = lookup[i];
 				var p = pid ? lookup[pid] : root;
 				p.add(item, orderPath);
 			}
-			lookup[-1] = root;
+			lookup[null] = root;
 			return lookup;
 		},
 
@@ -158,7 +160,7 @@ qx.Class.define("vuuvv.model.Tree", {
 			var items = [];
 			for (var i = 0; i < nodes.length; i++) {
 				var item = nodes.getItem(i);
-				if (item.getId() == -1) {
+				if (item.getId() == null) {
 					items = item.getChildren().toArray();
 					break;
 				}

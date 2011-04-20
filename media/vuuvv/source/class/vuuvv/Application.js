@@ -55,8 +55,7 @@ MEMBERS
 			dockContainer.add(scroll);
 			var content = new vuuvv.ui.ContentPage().set({
 				minWidth: 960,
-				minHeight: 600,
-				padding: 15
+				minHeight: 600
 			});
 			scroll.add(content);
 		}
