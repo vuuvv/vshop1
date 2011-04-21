@@ -7,6 +7,7 @@ from django.core.exceptions import PermissionDenied
 from utils import ajax_response, full_permission_name
 from main.models import Menu
 from django.db import models
+import json
 
 def user_passes_test(test_func):
 	"""
@@ -49,20 +50,25 @@ class ModelQuery(object):
 		self.permission = permission
 
 	def __call__(self, func):
-		def _func(request, name, *args):
-			obj = None
-			try:
-				cls = globals()[name]
-				if issubclass(cls, models.Model):
-					if not self.permission or request.user.has_perm(full_permission_name(self.permission, cls)):
-						obj = func(request, cls, *args)
-					else:
-						raise PermissionDenied("You have not enough permission to do this operate") 
-			except KeyError:
-				pass
-			except PermissionDenied, e:
-				return ajax_response(request, "error", e.message)
-			return ajax_response(request, value=obj) 
+		def _func(request, *args):
+			obj = {}
+			data = request.POST.get("data", None)
+			data = json.loads(data) if data else []
+			for k, v in data.items():
+				name = v.get("name", k)
+				try:
+					cls = globals()[name]
+					if issubclass(cls, models.Model):
+						if not self.permission or request.user.has_perm(full_permission_name(self.permission, cls)):
+							obj[k] = func(cls, v, *args)
+						else:
+							raise PermissionDenied("You have not enough permission to do this operate") 
+				except KeyError:
+					pass
+				except PermissionDenied, e:
+					return ajax_response(request, "error", e.message)
+			return ajax_response(request, value=obj)
+
 		return _func
 
 def model_query(permission=None):

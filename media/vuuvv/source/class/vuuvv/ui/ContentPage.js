@@ -17,12 +17,18 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 				return;
 			} else if (data.type == "error") {
 				alert(data.message);
+				return;
 			} else {
 				//var appdata = data.appdata;
 				var container = this.getContent();
 				this.__menubar = new vuuvv.ui.Menubar(data.value.Menu);
 				//appdata.menus = this.__menubar.getModel();
 				container.add(this.__menubar, {flex: 0});
+				var tabView = new vuuvv.ui.TabView();
+				container.add(tabView, {flex: 1});
+				vuuvv.Global.tab_view = tabView;
+				//qx.core.Init.getApplication().setAppData(appdata);
+				return container;
 			}
 
 			//var mainsplit = new qx.ui.splitpane.Pane("horizontal");
@@ -58,11 +64,6 @@ qx.Class.define("vuuvv.ui.ContentPage", {
 			//this._status.setTextAlign("right");
 			//searchComposlite.add(this._status);
 
-			//var tabView = new vuuvv.ui.TabView();
-			//mainsplit.add(tabView);
-			//qx.core.Init.getApplication().setTabView(tabView);
-			//qx.core.Init.getApplication().setAppData(appdata);
-			//return container;
 		},
 
 		createContentPage: function() {

@@ -8,6 +8,7 @@
 qx.Class.define("vuuvv.Global", {
 	statics: {
 		csrf_token: null,
+		tab_views: null,
 
 		icons: {
 			"new": "icon/22/actions/document-new.png",
@@ -45,7 +46,11 @@ qx.Class.define("vuuvv.Global", {
 
 		urls: {
 			"login": "/manage/login",
-			"appdata": "/manage/appdata"
+			"appdata": "/manage/appdata",
+			"query": "/manage/query",
+			"save": "/manage/save",
+			"delete": "/manage/delete",
+			"count": "/manage/count"
 		},
 
 		getUrl: function(name) {

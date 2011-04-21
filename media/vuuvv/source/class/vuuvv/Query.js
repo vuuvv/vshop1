@@ -3,47 +3,17 @@ qx.Class.define("vuuvv.Query", {
 
 	construct: function() {
 		this.base(arguments);
-		this.setConditions([]);
-		this.setFields([]);
+		this.setData({});
 	},
 
 	properties: {
-		name: {
-			init: "",
-			nullable: true
+		data: {
+			init: {}
 		},
 
 		type: {
-			check: ["save", "delete", "query", "count", "related_query"],
+			check: ["query", "count", "save", "delete"],
 			init: "query"
-		},
-
-		conditions: {
-			init: []
-		},
-
-		orderby: {
-			init: null,
-			nullable: true
-		},
-
-		limit: {
-			init: null,
-			nullable: true
-		},
-
-		value: {
-			init: null,
-			nullable: true
-		},
-
-		fields: {
-			init: []
-		},
-
-		related: {
-			init: null,
-			nullable: true
 		}
 	},
 
@@ -54,60 +24,71 @@ qx.Class.define("vuuvv.Query", {
 	},
 
 	members: {
-		query: function() {
-			var req = new qx.io.remote.Request(this.getUrl(), "POST", "application/json");
-			var data;
-			switch (this.getType()) {
-				case "count":
-					data = this.parseData() || "1=1";
-					break;
-				case "query":
-					data = this.parseData() || "1=1";
-					break;
-				case "related_query":
-					data = this.parseData() || "1=1";
-					break;
-				case "save":
-					data = this.getValue();
-					break;
-				case "delete":
-					data = this.parseData() || "1=1";
-					break;
-			}
-			if (data)
-				req.setData(data);
-
+		send: function() {
+			var req = new vuuvv.Request(this.getUrl(), "POST");
+			req.setParameter("data", qx.util.Json.stringify(this.getData()), true);
 			req.addListener("completed", this._onCompleted, this);
 			req.addListener("failed", this._onFailed, this);
 			req.addListener("timeout", this._onTimeout, this);
 			req.send();
 		},
 
-		getUrl: function() {
-			return [vuuvv.Global.query_prefix, this.getType(), this.getName()].join("/");
-		},
-
-		parseData: function() {
-			var p = ["conditions", "orderby", "limit", "value", "fields", "related"];
-			var result = "";
-			for(var i = 0; i < p.length; i++) {
-				var name = p[i];
-				var value = this.get(name);
-				if (vuuvv.Utils.isFalse(value))
-					result += encodeURIComponent(name) + "=" + encodeURIComponent(qx.util.Json.stringify(value)) + "&";
-			}
-			return result.substring(0, result.length - 1);
-		},
-
 		/**
-		 * Like Django's filter syntax, eg. addCondition("id", "exact", 5), to Django's id__exact=5
+		 * data should be an array
 		 */
-		addCondition: function(filter, value) {
-			this.getConditions().push([filter, value]);
+		query: function(data) {
+			this.setType("query");
+			if (data)
+				this.setData(data);
+			return this;
+		},
+
+		count: function(data) {
+			this.setType("count");
+			if (data)
+				this.setData(data);
+			return this;
+		},
+
+		save: function(data) {
+			this.setType("save");
+			if (data)
+				this.setData(data);
+			return this;
+		},
+
+		"delete": function(data) {
+			this.setType("delete");
+			if (data)
+				this.setData(data);
+			return this;
+		},
+
+		getUrl: function() {
+			return vuuvv.Global.getUrl(this.getType());
+		},
+
+		data: function(model, name, value) {
+			var data = this.getData();
+			if (!data[model])
+				data[model] = {}
+
+			if (qx.lang.Type.isString(name)) {
+				data[model][name] = value;
+			} else {
+				data[model] = name;
+			}
+		},
+
+		add: function(value) {
+			var data = this.getData();
+			for (var k in value) {
+				data[k] = value[k];
+			}
 		},
 
 		_onCompleted: function(e) {
-			this.fireDataEvent("completed", e.getContent());
+			this.fireDataEvent("completed", e.getData());
 		},
 
 		_onFailed: function(e) {

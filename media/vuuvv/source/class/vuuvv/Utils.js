@@ -7,6 +7,6 @@ qx.Class.define("vuuvv.Utils", {
 			if (qx.lang.Type.isArray(value) && value.length === 0)
 				return false;
 			return !!value;
-		},
+		}
 	}
 });

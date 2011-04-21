@@ -1,8 +1,8 @@
 qx.Class.define("vuuvv.ui.TreeModelView", {
 	extend: vuuvv.ui.ModelView,
 
-	construct: function(name, proto, columns, related) {
-		this.base(arguments, name, proto, columns, related);
+	construct: function(name, proto, columns, related, attach) {
+		this.base(arguments, name, proto, columns, related, attach);
 		this.setAcenstors([]);
 	},
 

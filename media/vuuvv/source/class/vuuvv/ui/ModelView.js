@@ -6,7 +6,7 @@
 qx.Class.define("vuuvv.ui.ModelView", {
 	extend: qx.ui.container.Composite,
 
-	construct: function(name, proto, columns, related) {
+	construct: function(name, proto, columns, related, attach) {
 		this.base(arguments, new qx.ui.layout.VBox);
 		this.setBackgroundColor("background-splitpane");
 
@@ -20,6 +20,7 @@ qx.Class.define("vuuvv.ui.ModelView", {
 		}
 		this.setColumns(columns);
 		this.setRelated(related);
+		this.setAttach(attach);
 
 		this._createContent();
 	},
@@ -31,6 +32,11 @@ qx.Class.define("vuuvv.ui.ModelView", {
 
 		columns: {
 			init: []
+		},
+
+		attach: {
+			init: null,
+			nullable: true
 		},
 
 		related: {
@@ -63,7 +69,7 @@ qx.Class.define("vuuvv.ui.ModelView", {
 		_createContent: function() {
 			this._createCommands(this.getCommandNames());
 			this.add(this._createToolbar());
-			this.add(this._createTable());
+			this.add(this._createTable(), {flex: 1});
 		},
 
 		_createToolbar: function() {
@@ -143,16 +149,17 @@ qx.Class.define("vuuvv.ui.ModelView", {
 		//override
 		_onNew: function() {
 			this.getFormWindow().reset();
-			this._edit(-1);
+			this._edit(null);
 		},
 
 		//override
 		_edit: function(id) {
 			var q = new vuuvv.Query;
 			q.addListener("completed", this._onLoadDataCompleted, this);
-			q.setName(this.getName())
-			q.addCondition("id__exact", id);
+			q.data(this.getName(), "conditions", {"id__exact": id});
+			q.add(this.getAttach());
 			q.query();
+			q.send();
 		},
 
 		//override
@@ -169,10 +176,9 @@ qx.Class.define("vuuvv.ui.ModelView", {
 				console.log(ids);
 				var q = new vuuvv.Query;
 				q.addListener("completed", this._onItemDeleted, this);
-				q.setName(this.getName());
-				q.setType("delete");
-				q.addCondition("id__in", ids);
-				q.query();
+				q.data(this.getName(), "conditions", {"id__in": ids});
+				q.delete();
+				q.send();
 			}
 		},
 

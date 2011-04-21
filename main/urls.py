@@ -10,9 +10,9 @@ urlpatterns = patterns('',
 	url(r'^uc/', include('registration.backends.default.urls')),
 	url(r'^manage/appdata', admin.appdata),
 	url(r'^manage/login', admin.login),
-	url(r'^manage/query/(\w+)', admin.query),
-	url(r'^manage/count/(\w+)', admin.count),
-	url(r'^manage/save/(\w+)', admin.save),
-	url(r'^manage/delete/(\w+)', admin.delete),
+	url(r'^manage/query$', admin.query),
+	url(r'^manage/count$', admin.count),
+	url(r'^manage/save$', admin.save),
+	url(r'^manage/delete$', admin.delete),
 )
 

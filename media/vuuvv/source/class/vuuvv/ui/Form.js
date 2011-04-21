@@ -1,5 +1,7 @@
 /**
 #require(qx.ui.form.DateField)
+#require(qx.ui.form.SelectBox)
+#require(qx.ui.form.TextField)
 */
 qx.Class.define("vuuvv.ui.Form", {
 	extend: qx.ui.container.Composite,
@@ -66,6 +68,7 @@ qx.Class.define("vuuvv.ui.Form", {
 			this._controller = new qx.data.controller.Form(null, form);
 			for (var name in proto) {
 				item = proto[name];
+				this.debug(item.type);
 				if (item.type == "HtmlArea")
 					cls = vuuvv.ui.HtmlArea;
 				else
@@ -161,14 +164,13 @@ qx.Class.define("vuuvv.ui.Form", {
 					if (this._widgets[name].classname == "vuuvv.ui.HtmlArea")
 						this._widgets[name].syncValue();
 				}
-				var data = qx.util.Serializer.toUriParameter(this._controller.getModel());
+				var data = qx.util.Serializer.toNativeObject(this._controller.getModel());
 				this.fireDataEvent("beforesave", this._controller.getModel());
 				var q = new vuuvv.Query;
 				q.addListener("completed", this._onSaveCompleted, this);
-				q.setName(this.getName());
-				q.setValue(data);
-				q.setType("save");
-				q.query();
+				q.data(this.getName(), "value", data);
+				q.save();
+				q.send();
 			}
 		},
 

@@ -21,15 +21,15 @@ qx.Class.define('vuuvv.model.RemoteTree', {
 		// overloaded - called whenever the table request the row count
 		_loadRowCount: function() {
 			var q = this._getCountQuery();
-			q.addCondition("parent", "exact", this.getParent());
-			q.query();
+			q.data(this.getModelName(), "conditions", {"parent__exact": this.getParent()});
+			q.send();
 		},
 
 		// overloaded - called whenever the table requests new data
 		_loadRowData: function(firstRow, lastRow) {
 			var q = this._getQuery(firstRow, lastRow);
-			q.addCondition("parent", "exact", this.getParent());
-			q.query();
+			q.data(this.getModelName(), "conditions", {"parent__exact": this.getParent()});
+			q.send();
 		},
 
 		enter: function(id) {

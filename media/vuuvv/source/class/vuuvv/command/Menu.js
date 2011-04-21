@@ -9,8 +9,7 @@ qx.Class.define("vuuvv.command.Menu", {
 	members:
 	{
 		handle: function() {
-			var app = qx.core.Init.getApplication();
-			var tabs = app.getTabView();
+			var tabs = vuuvv.Global.tab_view;
 			tabs.add(this.getLabel(), this.getIcon(), "vuuvv.ui.page.Menu");
 		}
 	}
