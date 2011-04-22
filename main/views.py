@@ -1,21 +1,29 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.conf import settings
+from utils import get_template
+from models import Nav
 import forms
 import logging
 
-TEMPLATE = "taobao"
+TEMPLATE = "ecshop"
 
 def index(request):
-	return HttpResponse(request.user)
+	nav = Nav.objects.all()
+	data = {
+		"nav_top": [n for n in nav if n.position == "top"],
+		"nav_middle": [n for n in nav if n.position == "middle"],
+		"nav_bottom": [n for n in nav if n.position == "bottom"],
+	}
+	return render_to_response(get_template("index.html"), {"data": data})
 
 def login(request):
 	from django.contrib.auth.views import login
-	return login(request, TEMPLATE + "/login.html")
+	return login(request, get_template("index.html"))
 
 def register(request):
 	form = forms.RegistrationForm()
-	return render_to_response(TEMPLATE + "/register.html", {"form": form})
+	return render_to_response(get_template("index.html"), {"form": form})
 
 def media(request, path):
 	import django.views.static

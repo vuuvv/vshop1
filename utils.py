@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder, Serializer
 from django.middleware.csrf import get_token
+from django.conf import settings
 import json
 
 def ajax_response(request, type="success", message="", value=None):
@@ -15,6 +16,9 @@ def ajax_response(request, type="success", message="", value=None):
 		"csrf": get_token(request),
 	}
 	return HttpResponse(json.dumps(resp, cls=DjangoJSONEncoder))
+
+def get_template(name):
+	return settings.TEMPLATE_NAME + "/" + name
 
 def get_fields_name(cls):
 	from django.db.models.related import RelatedObject

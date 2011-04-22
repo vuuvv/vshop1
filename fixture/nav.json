@@ -1,0 +1,201 @@
+[
+	{
+		"model": "main.Nav",
+		"pk": 1,
+		"fields": {
+			"name": "选购中心",
+			"url": "#",
+			"position": "top"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 2,
+		"fields": {
+			"name": "查看购物车",
+			"url": "#",
+			"position": "top"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 3,
+		"fields": {
+			"name": "团购商品",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 4,
+		"fields": {
+			"name": "夺宝奇兵",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 5,
+		"fields": {
+			"name": "标签云",
+			"url": "#",
+			"position": "top"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 6,
+		"fields": {
+			"name": "免责条款",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 7,
+		"fields": {
+			"name": "隐私保护",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 8,
+		"fields": {
+			"name": "咨询热点",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 9,
+		"fields": {
+			"name": "联系我们",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 10,
+		"fields": {
+			"name": "公司简介",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 11,
+		"fields": {
+			"name": "批发方案",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 12,
+		"fields": {
+			"name": "配送方式",
+			"url": "#",
+			"position": "bottom"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 13,
+		"fields": {
+			"name": "留言板",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 14,
+		"fields": {
+			"name": "双模手机",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 15,
+		"fields": {
+			"name": "EC论坛",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 16,
+		"fields": {
+			"name": "优惠活动",
+			"url": "#",
+			"position": "top"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 17,
+		"fields": {
+			"name": "报价单",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 18,
+		"fields": {
+			"name": "拍卖活动",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 19,
+		"fields": {
+			"name": "积分商城",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 20,
+		"fields": {
+			"name": "GSM手机",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 21,
+		"fields": {
+			"name": "手机配件",
+			"url": "#",
+			"position": "middle"
+		}
+	},
+	{
+		"model": "main.Nav",
+		"pk": 22,
+		"fields": {
+			"name": "批发",
+			"url": "#",
+			"position": "top"
+		}
+	}
+]
+
