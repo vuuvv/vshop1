@@ -2,7 +2,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.conf import settings
 from utils import get_template
-from models import Nav
+from models import Nav, Category
+from tree import Tree
 import forms
 import logging
 
@@ -14,6 +15,7 @@ def index(request):
 		"nav_top": [n for n in nav if n.position == "top"],
 		"nav_middle": [n for n in nav if n.position == "middle"],
 		"nav_bottom": [n for n in nav if n.position == "bottom"],
+		"categories": Tree(list(Category.objects.all().values())),
 	}
 	return render_to_response(get_template("index.html"), {"data": data})
 

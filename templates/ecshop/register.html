@@ -1,0 +1,36 @@
+{% extends "frame.html" %}
+{% load i18n %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/taobao/reg.css" />
+{% endblock %}
+
+{% block content %}
+<div class="hd">
+	<h2 class="title step1">Register Free</h2>
+</div>
+<div class="bd">
+	<div class="reg-form">
+		<form id="" method="post">
+			<div class="fields">
+				<ul>
+					{% for field in form %}
+					<li class="field {% if field.errors %} error {% endif %}">
+						<div class="input">
+						{{ field.label_tag }}&nbsp;{{ field }}
+						{{ field.errors }}
+						</div>
+					</li>
+					{% endfor %}
+					<li class="submit-field">
+						<div class="input">
+							<input type="submit" value="同意以下协议，提交注册" class="submit-btn" id="J_SubmitBtn">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+	<div class="agreements">
+	</div>
+</div>
+{% endblock %}

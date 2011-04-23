@@ -1,0 +1,13 @@
+{% load box %}
+{% box1 %}
+<div id="category_tree">
+	{% for item1 in data.categories.root.children %}
+	<dl>
+		<dt><a href="#">{{item1.data.name}}</a></dt>
+		{% for item2 in item1.children %}
+		<dd><a href="#">{{item2.data.name}}</a></dt>
+		{% endfor %}
+	</dl>
+	{% endfor %}
+</div>
+{% endbox1 %}

@@ -1,0 +1,114 @@
+[
+	{
+		"model": "main.Category",
+		"pk": 1,
+		"fields": {
+			"name": "手机类型",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 2,
+		"fields": {
+			"name": "CDMA手机",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 3,
+		"fields": {
+			"name": "GSM手机",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 4,
+		"fields": {
+			"name": "3G手机",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 5,
+		"fields": {
+			"name": "双模手机",
+			"parent": 1
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 6,
+		"fields": {
+			"name": "手机配件",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 7,
+		"fields": {
+			"name": "充电器",
+			"parent": 6
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 8,
+		"fields": {
+			"name": "耳机",
+			"parent": 6
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 9,
+		"fields": {
+			"name": "电池",
+			"parent": 6
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 10,
+		"fields": {
+			"name": "读卡器和内存卡",
+			"parent": 6
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 11,
+		"fields": {
+			"name": "充值卡",
+			"parent": null
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 12,
+		"fields": {
+			"name": "小灵通/固话充值卡",
+			"parent": 11
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 13,
+		"fields": {
+			"name": "移动手机充值卡",
+			"parent": 11
+		}
+	},
+	{
+		"model": "main.Category",
+		"pk": 14,
+		"fields": {
+			"name": "联通手机充值卡",
+			"parent": 11
+		}
+	}
+]

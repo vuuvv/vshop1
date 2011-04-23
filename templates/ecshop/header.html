@@ -1,0 +1,37 @@
+<div class="top clearfix">
+	<div class="logo"></div>
+	<div class="user_info">
+	</div>
+	<div class="top_nav">
+		{% for nav in data.nav_top %}
+		<a href="{{nav.url}}">{{nav.name}}</a>
+		{% if not forloop.last %}
+		|
+		{% endif %}
+		{% endfor %}
+		<div class="top_nav_r"></div>
+	</div>
+</div>
+
+<div class="blank"></div>
+<div class="main_nav clearfix">
+	<a class="cur" href="">首页<span></span></a>
+	{% for nav in data.nav_middle %}
+	<a href="">{{ nav.name }}<span></span></a>
+	{% endfor %}
+</div>
+<div class="blank"></div>
+<div class="search clearfix">
+	<form id="search_form" action="" method="post">
+		<input id="keyword" class="text" value="" name="keywords"/>
+		<input type="submit" class="submit" value=""/>
+		<a href="">高级搜索</a>
+	</form>
+</div>
+<div class="breadcrumb">
+	<div class="where">
+	</div>
+</div>
+<div class="blank"></div>
+
+

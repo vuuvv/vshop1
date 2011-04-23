@@ -1,0 +1,20 @@
+{% load box %}
+<div class="blank"></div>
+<div class="bottom_nav">
+	{% box1%}
+		<div class="bottom_nav_inner">
+			<div class="bottom_left">
+				{% for nav in data.nav_bottom %}
+				<a href="{{nav.url}}">{{nav.name}}</a>
+				{% if not forloop.last %}
+				-
+				{% endif %}
+				{% endfor %}
+			</div>
+			<div class="bottom_right">
+				{% include "ecshop/button.html" with href="#top" src="images/btn_top.gif" only %}
+				{% include "ecshop/button.html" with href="/" src="images/btn_home.gif" only %}
+			</div>
+		</div>
+	{% endbox1%}
+</div>
