@@ -1,0 +1,76 @@
+{% extends "ecshop/frame.html" %}
+{% block css %}
+<link href="/static/css/ecshop/goods.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascript %}
+<script src="http://a.tbcdn.cn/s/kissy/1.1.7/seed-min.js"></script>
+</style>
+<script type="text/javascript">
+KISSY.use('imagezoom', function(S) {
+	S.ready(function(S) {
+		var m = new S.ImageZoom("#img_booth", {
+			zoomSize: [430, 310]
+		});
+		S.Event.on("#img_thumbs li", 'mouseenter', function() {
+			if (!S.DOM.hasClass(this, 'thumb_selected')) {
+				S.DOM.removeClass(".thumb_selected", "thumb_selected");
+				S.DOM.addClass(this, 'thumb_selected');
+				var data = S.DOM.attr(this, 'data-ks-imagezoom');
+				m.changeImageSrc(data+'_310x310.jpg');
+				m.set('bigImageSrc', data);
+			}
+		});
+	});
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="left_side">
+	{% include "ecshop/parts/notify.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/cartinfo.html" %}
+	<div class="blank5"></div>
+</div>
+<div class="right_side">
+	<div class="clearfix" id="goods_info">
+		<div class="goods_title">
+			<h5>ONE-T凡兔 春装新品2011新款 短袖T恤 日韩 男士t恤 字母图案</h5>
+		</div>
+		<div class="gallery">
+			<div class="booth">
+				<a href="#"><img id="img_booth" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg" src="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg_310x310.jpg"/></a>
+			</div>
+			<ul class="img_thumbs clearfix" id="img_thumbs">
+				<li class="thumb_selected" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg">
+				<div class="thumb_pic tb_s40">
+					<a href="#"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg_40x40.jpg"></a>
+				</div>
+				</li>
+				<li data-ks-imagezoom="http://img01.taobaocdn.com/imgextra/i1/24120068/T2mQBbXcXMXXXXXXXX_!!24120068.jpg">
+				<div class="thumb_pic tb_s40">
+					<a href="#"><img src="http://img01.taobaocdn.com/imgextra/i1/24120068/T2mQBbXcXMXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
+				</div>
+				</li>
+				<li data-ks-imagezoom="http://img01.taobaocdn.com/imgextra/i1/24120068/T2nQBbXb8MXXXXXXXX_!!24120068.jpg">
+				<div class="thumb_pic tb_s40">
+					<a href="#"><img src="http://img01.taobaocdn.com/imgextra/i1/24120068/T2nQBbXb8MXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
+				</div>
+				</li>
+				<li data-ks-imagezoom="http://img04.taobaocdn.com/imgextra/i4/24120068/T2.AFbXb4MXXXXXXXX_!!24120068.jpg">
+				<div class="thumb_pic tb_s40">
+					<a href="#"><img src="http://img04.taobaocdn.com/imgextra/i4/24120068/T2.AFbXb4MXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
+				</div>
+				</li>
+				<li data-ks-imagezoom="http://img03.taobaocdn.com/imgextra/i3/24120068/T2XkBbXbVMXXXXXXXX_!!24120068.jpg">
+				<div class="thumb_pic tb_s40">
+					<a href="#"><img src="http://img03.taobaocdn.com/imgextra/i3/24120068/T2XkBbXbVMXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
+				</div>
+				</li>
+			</ul>
+			<div class="blank5"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}

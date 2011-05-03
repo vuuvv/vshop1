@@ -19,6 +19,16 @@ def index(request):
 	}
 	return render_to_response(get_template("index.html"), {"data": data})
 
+def goods_detail(request, id):
+	nav = Nav.objects.all()
+	data = {
+		"nav_top": [n for n in nav if n.position == "top"],
+		"nav_middle": [n for n in nav if n.position == "middle"],
+		"nav_bottom": [n for n in nav if n.position == "bottom"],
+		"categories": Tree(list(Category.objects.all().values())),
+	}
+	return render_to_response(get_template("goods_detail.html"), {"data": data})
+
 def login(request):
 	from django.contrib.auth.views import login
 	return login(request, get_template("index.html"))
@@ -31,5 +41,4 @@ def media(request, path):
 	import django.views.static
 	root = getattr(settings, 'MEDIA_ROOT', None)
 	return django.views.static.serve(request, path, root)
-
 

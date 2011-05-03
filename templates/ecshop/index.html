@@ -1,14 +1,29 @@
 {% extends "ecshop/frame.html" %}
 {% block content %}
 <div class="left_side">
-	{% include "ecshop/notify.html" %}
+	{% include "ecshop/parts/notify.html" %}
 	<div class="blank5"></div>
-	{% include "ecshop/cartinfo.html" %}
+	{% include "ecshop/parts/cartinfo.html" %}
 	<div class="blank5"></div>
-	{% include "ecshop/category_tree.html" %}
+	{% include "ecshop/parts/category_tree.html" %}
 	<div class="blank5"></div>
-	{% include "ecshop/top10.html" %}
+	{% include "ecshop/parts/top10.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/promotioninfo.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/order_query.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/email_subscribe.html" %}
 </div>
-<div class"right_side">
+<div class="right_side">
+	{% include "ecshop/parts/focus.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/bestitem.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/newitem.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/hotitem.html" %}
+	<div class="blank5"></div>
+	{% include "ecshop/parts/groupitem.html" %}
 </div>
 {% endblock %}

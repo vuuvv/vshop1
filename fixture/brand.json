@@ -1,0 +1,79 @@
+[
+	{
+		"model": "main.Brand",
+		"pk": 1,
+		"fields": {
+			"name": "诺基亚"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 2,
+		"fields": {
+			"name": "摩托罗拉"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 3,
+		"fields": {
+			"name": "多普达"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 4,
+		"fields": {
+			"name": "飞利浦"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 5,
+		"fields": {
+			"name": "夏新"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 6,
+		"fields": {
+			"name": "三星"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 7,
+		"fields": {
+			"name": "索爱"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 8,
+		"fields": {
+			"name": "LG"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 9,
+		"fields": {
+			"name": "联想"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 10,
+		"fields": {
+			"name": "金立"
+		}
+	},
+	{
+		"model": "main.Brand",
+		"pk": 11,
+		"fields": {
+			"name": "恒基伟业"
+		}
+	}
+]

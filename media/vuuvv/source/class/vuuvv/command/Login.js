@@ -9,6 +9,10 @@ qx.Class.define("vuuvv.command.Login", {
 	members:
 	{
 		handle: function() {
+			qx.Class.define("vuuvv.command.T", {
+				extend: vuuvv.command.Command
+			});
+			vuuvv.command.T();
 			var f = new vuuvv.ui.LoginDialog();
 			f.show();
 		}

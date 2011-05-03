@@ -162,3 +162,4 @@ CAPTCHA_IMAGE_BEFORE_FIELD = False
 AUTH_PROFILE_MODULE = "main.UserProfile"
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 TEMPLATE_NAME = "ecshop"
+CACHE_BACKEND = "file://f:/tmp/django_cache"

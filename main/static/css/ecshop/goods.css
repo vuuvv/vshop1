@@ -1,0 +1,95 @@
+.ks-imagezoom-lens {
+	background: url(http://img04.taobaocdn.com/tps/i4/T12pdtXaldXXXXXXXX-2-2.png) repeat;
+	cursor: move;
+	z-index: 1;
+}
+
+.ks-imagezoom-icon {
+	height: 23px;
+	width: 23px;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	background: url(http://img02.taobaocdn.com/tps/i2/T1uJNuXX8tXXXXXXXX-23-23.png) no-repeat scroll left top transparent;
+	z-index: 2;
+}
+
+.ks-imagezoom-viewer {
+	border: 1px solid #CCCCCC;
+	overflow: hidden;
+	text-align: center;
+	z-index: 999;
+	width: 430px;
+}
+.ks-imagezoom-loading {
+	background: #fff url(assets/loading.gif) no-repeat center center;
+}
+
+.goods_title {
+	margin-bottom: 10px;
+	position: relative;
+	z-index: 2;
+}
+
+.goods_title h5 {
+	color: #000;
+	font-size: 14px;
+	line-height: 22px;
+	overflow: hidden;
+	text-align: left;
+	text-indent: 5px;
+	white-space: nowrap;
+	width: 530px;
+}
+
+.gallery {
+	width: 310px;
+	float: left;
+}
+
+.booth {
+	border: 1px solid #CDCDCD;
+	position: relative;
+	z-index: 1;
+	height: 310px;
+	width: 310px;
+}
+
+#img_booth {
+	vertical-align: middle;
+	max-height: 310px;
+	max-width: 310px;
+	border: 0 none;
+}
+
+.img_thumbs {
+	margin: 10px 0 0 26px;
+	overflow: hidden;
+}
+
+.img_thumbs li {
+	height: 40px;
+	width: 42px;
+	margin: 0 6px 0 0;
+	overflow: hidden;
+	padding: 7px 4px 4px 2px;
+	float: left;
+	display: inline;
+}
+
+.tb_s40, .tb_s40 a {
+	height: 40px;
+	width: 40px;
+}
+
+.tb_s40 img {
+	max-height: 40px;
+	max-width: 40px;
+}
+
+.thumb_pic {
+	border: 1px solid #CDCDCD;
+}
+
+.thumb_selected {
+	background: url("http://img03.taobaocdn.com/tps/i3/T1aPt_XoxXXXXXXXXX-635-144.png") no-repeat scroll -21px 0 transparent;
+}

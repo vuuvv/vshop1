@@ -19,5 +19,5 @@ class BoxNode(template.Node):
 		self.number = number
 
 	def render(self, context):
-		output = '<div class="box"><div class="box_%s">%s</div></div>' % (self.number, self.nodelist.render(context))
+		output = '<div class="box clearfix"><div class="box_%s clearfix">%s</div></div>' % (self.number, self.nodelist.render(context))
 		return output

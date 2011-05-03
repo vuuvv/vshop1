@@ -58,19 +58,22 @@ class Supplier(models.Model):
 	desc = models.CharField(max_length=255)
 	check = models.BooleanField()
 
+class GoodsManager(models.Manager):
+	pass
+
 class Goods(models.Model):
 	sn = models.CharField(max_length=128)
 	name = models.CharField(max_length=128)
-	name_style = models.CharField(max_length=128)
+	name_style = models.CharField(max_length=128, default="+")
 	click_count = models.IntegerField(default=0)
-	provider = models.CharField(max_length=128)
+	provider = models.CharField(max_length=128, null=True, blank=True)
 	count = models.IntegerField(default=0)
 	warn_count = models.IntegerField(default=1)
 	weight = models.FloatField(default=1.0)
 	market_price = models.FloatField()
 	shop_price = models.FloatField()
-	promote_price = models.FloatField()
-	keywords = models.CharField(max_length=255)
+	promote_price = models.FloatField(default=0.00)
+	keywords = models.CharField(max_length=255, null=True, blank=True)
 	brief = models.CharField(max_length=255, null=True, blank=True)
 	desc = models.CharField(max_length=255, null=True, blank=True)
 	thumb = models.CharField(max_length=255, null=True, blank=True)
@@ -83,10 +86,15 @@ class Goods(models.Model):
 	order = models.IntegerField(default=0)
 	add_time = models.DateTimeField(default=datetime.now)
 	lastest_update = models.DateTimeField(default=datetime.now)
+	is_new = models.BooleanField(default=False)
+	is_best = models.BooleanField(default=False)
+	is_hot = models.BooleanField(default=False)
 
 	category = models.ForeignKey(Category, null=True, blank=True, related_name="goods")
 	brand = models.ForeignKey(Brand, null=True, blank=True, related_name="goods")
 	supplier = models.ForeignKey(Supplier, null=True, blank=True, related_name="goods")
+
+	objects = GoodsManager()
 
 class Cart(models.Model):
 	price = models.FloatField()

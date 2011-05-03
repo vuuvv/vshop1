@@ -1,0 +1,405 @@
+[
+	{
+		"model": "main.Goods",
+		"pk": 1,
+		"fields": {
+			"name": "KD876",
+			"sn": "ECS000000",
+			"count": "1",
+			"weight": 0.110,
+			"market_price": 1665.60,
+			"shop_price": 1388.00,
+			"category": 4
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 2,
+		"fields": {
+			"name": "诺基亚N85原装充电器",
+			"sn": "ECS000004",
+			"count": 7,
+			"weight": 0.000,
+			"market_price": 69.60,
+			"shop_price": 58.00,
+			"category": 8 
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 3,
+		"fields": {
+			"name": "诺基亚原装5800耳机",
+			"sn": "ECS000002",
+			"count": 24,
+			"weight": 0.000,
+			"market_price": 81.60,
+			"shop_price": 68.00,
+			"category": 8
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 4,
+		"fields": {
+			"name": "索爱原装M2卡读卡器",
+			"sn": "ECS000005",
+			"count": 8,
+			"weight": 0.000,
+			"market_price": 24.00,
+			"shop_price": 20.00,
+			"category": 11 
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 5,
+		"fields": {
+			"name": "胜创KINGMAX内存卡",
+			"sn": "ECS000006",
+			"count": 15,
+			"weight": 0.000,
+			"market_price": 50.40,
+			"shop_price": 42.00,
+			"category": 11
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 6,
+		"fields": {
+			"name": "诺基亚N85原装立体声耳机HS-82",
+			"sn": "ECS000007",
+			"count": 20,
+			"weight": 	0.000,
+			"market_price": 120.00,
+			"shop_price": 100.00,
+			"category": 8
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 7,
+		"fields": {
+			"name": "飞利浦9@9v",
+			"sn": "ECS000008",
+			"count": 1,
+			"weight": 0.075,
+			"market_price": 478.79,
+			"shop_price": 399.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 8,
+		"fields": {
+			"name": "诺基亚E66",
+			"sn": "ECS000009",
+			"count": 4,
+			"weight": 0.121,
+			"market_price": 2757.60,
+			"shop_price": 2298.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 9,
+		"fields": {
+			"name": "索爱C702c",
+			"sn": "ECS000010",
+			"count": 7,
+			"weight": 0.000,
+			"market_price": 1593.60,
+			"shop_price": 1328.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 10,
+		"fields": {
+			"name": "索爱C702c",
+			"sn": "ECS000011",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 0.00,
+			"shop_price": 1300.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 11,
+		"fields": {
+			"name": "摩托罗拉A810",
+			"sn": "ECS000012",
+			"count": 8,
+			"weight": 0.000,
+			"market_price": 1179.60,
+			"shop_price": 983.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 12,
+		"fields": {
+			"name": "诺基亚5320 XpressMusic",
+			"sn": "ECS000013",
+			"count": 8,
+			"weight": 0.000,
+			"market_price": 1573.20,
+			"shop_price": 1311.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 13,
+		"fields": {
+			"name": "诺基亚5800XM",
+			"sn": "ECS000014",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 3150.00,
+			"shop_price": 2625.00,
+			"category": 4
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 14,
+		"fields": {
+			"name": "摩托罗拉A810",
+			"sn": "ECS000015",
+			"count": 3,
+			"weight": 0.000,
+			"market_price": 945.60,
+			"shop_price": 788.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 15,
+		"fields": {
+			"name": "恒基伟业G101",
+			"sn": "ECS000016",
+			"count": 0,
+			"weight": 0.000,
+			"market_price": 988.00,
+			"shop_price": 823.33,
+			"category": 2
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 16,
+		"fields": {
+			"name": "夏新N7",
+			"sn": "ECS000017",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 2760.00,
+			"shop_price": 2300.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 17,
+		"fields": {
+			"name": "夏新T5",
+			"sn": "ECS000018",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 3453.60,
+			"shop_price": 2878.00,
+			"category": 4
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 18,
+		"fields": {
+			"name": "三星SGH-F258",
+			"sn": "ECS000019",
+			"count": 12,
+			"weight": 0.000,
+			"market_price": 1029.60,
+			"shop_price": 858.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 19,
+		"fields": {
+			"name": "三星BC01",
+			"sn": "ECS000020",
+			"count": 12,
+			"weight": 0.000,
+			"market_price": 336.00,
+			"shop_price": 280.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 20,
+		"fields": {
+			"name": "金立 A30",
+			"sn": "ECS000021",
+			"count": 170,
+			"weight": 0.000,
+			"market_price": 2400.00,
+			"shop_price": 2000.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 21,
+		"fields": {
+			"name": "多普达Touch HD",
+			"sn": "ECS000022",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 7198.80,
+			"shop_price": 5999.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 22,
+		"fields": {
+			"name": "诺基亚N96",
+			"sn": "ECS000023",
+			"count": 8,
+			"weight": 0.000,
+			"market_price": 4440.00,
+			"shop_price": 3700.00,
+			"category": 5
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 23,
+		"fields": {
+			"name": "P806",
+			"sn": "ECS000024",
+			"count": 100,
+			"weight": 0.000,
+			"market_price": 2400.00,
+			"shop_price": 2000.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 24,
+		"fields": {
+			"name": "小灵通/固话50元充值卡",
+			"sn": "ECS000025",
+			"count": 2,
+			"weight": 0.000,
+			"market_price": 57.59,
+			"shop_price": 48.00,
+			"category": 12
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 25,
+		"fields": {
+			"name": "小灵通/固话20元充值卡",
+			"sn": "ECS000026",
+			"count": 2,
+			"weight": 0.000,
+			"market_price": 22.80,
+			"shop_price": 19.00,
+			"category": 12
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 26,
+		"fields": {
+			"name": "联通100元充值卡",
+			"sn": "ECS000027",
+			"count": 2,
+			"weight": 0.000,
+			"market_price": 100.00,
+			"shop_price": 95.00,
+			"category": 14
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 27,
+		"fields": {
+			"name": "联通50元充值卡",
+			"sn": "ECS000028",
+			"count": 0,
+			"weight": 0.000,
+			"market_price": 50.00,
+			"shop_price": 45.00,
+			"category": 14
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 28,
+		"fields": {
+			"name": "移动100元充值卡",
+			"sn": "ECS000029",
+			"count": 0,
+			"weight": 0.000,
+			"market_price": 100.00,
+			"shop_price": 90.00,
+			"category":13 
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 1,
+		"fields": {
+			"name": "移动20元充值卡",
+			"sn": "ECS000030",
+			"count": 9,
+			"weight": 0.000,
+			"market_price": 21.00,
+			"shop_price": 18.00,
+			"category": 13 
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 30,
+		"fields": {
+			"name": "摩托罗拉E8",
+			"sn": "ECS000031",
+			"count": 1,
+			"weight": 0.000,
+			"market_price": 1604.39,
+			"shop_price": 1337.00,
+			"category": 3
+		}
+	},
+	{
+		"model": "main.Goods",
+		"pk": 31,
+		"fields": {
+			"name": "诺基亚N85",
+			"sn": "ECS000032",
+			"count": 4,
+			"weight": 0.000,
+			"market_price": 3612.00,
+			"shop_price": 3010.00,
+			"category": 3
+		}
+	}
+]
