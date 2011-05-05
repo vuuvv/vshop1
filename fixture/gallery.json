@@ -1,0 +1,26 @@
+[
+	{
+		"model": "main.Gallery",
+		"pk": 1,
+		"fields": {
+			"image": "T1RXB8XlNlXXcsZFZU_013511",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Gallery",
+		"pk": 2,
+		"fields": {
+			"image": "T2mQBbXcXMXXXXXXXX_!!24120068",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Gallery",
+		"pk": 3,
+		"fields": {
+			"image": "T2nQBbXb8MXXXXXXXX_!!24120068",
+			"goods": 1
+		}
+	}
+]

@@ -38,7 +38,6 @@
 	text-align: left;
 	text-indent: 5px;
 	white-space: nowrap;
-	width: 530px;
 }
 
 .gallery {
@@ -92,4 +91,9 @@
 
 .thumb_selected {
 	background: url("http://img03.taobaocdn.com/tps/i3/T1aPt_XoxXXXXXXXXX-635-144.png") no-repeat scroll -21px 0 transparent;
+}
+
+.goods_detail {
+	float: left;
+	margin-left: 10px;
 }

@@ -1,0 +1,50 @@
+[
+	{
+		"model": "main.SpecItem",
+		"pk": 1,
+		"fields": {
+			"value": "170/(M)",
+			"spec": 1
+		}
+	},
+	{
+		"model": "main.SpecItem",
+		"pk": 2,
+		"fields": {
+			"value": "175/(L)",
+			"spec": 1
+		}
+	},
+	{
+		"model": "main.SpecItem",
+		"pk": 3,
+		"fields": {
+			"value": "180/(XL)",
+			"spec": 1
+		}
+	},
+	{
+		"model": "main.SpecItem",
+		"pk": 4,
+		"fields": {
+			"value": "浅蓝",
+			"spec": 2
+		}
+	},
+	{
+		"model": "main.SpecItem",
+		"pk": 5,
+		"fields": {
+			"value": "白色",
+			"spec": 2
+		}
+	},
+	{
+		"model": "main.SpecItem",
+		"pk": 6,
+		"fields": {
+			"value": "黄绿",
+			"spec": 2
+		}
+	}
+]

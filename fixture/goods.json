@@ -3,13 +3,14 @@
 		"model": "main.Goods",
 		"pk": 1,
 		"fields": {
-			"name": "KD876",
+			"name": "ONE-T凡兔 男士t恤",
 			"sn": "ECS000000",
 			"count": "1",
 			"weight": 0.110,
 			"market_price": 1665.60,
 			"shop_price": 1388.00,
-			"category": 4
+			"category": 4,
+			"properties": "{'spec':[1,2], 'specitem': [[1,4],[1,5],[1,6],[2,4],[2,5],[3,5]]}"
 		}
 	},
 	{
@@ -365,7 +366,7 @@
 	},
 	{
 		"model": "main.Goods",
-		"pk": 1,
+		"pk": 29,
 		"fields": {
 			"name": "移动20元充值卡",
 			"sn": "ECS000030",

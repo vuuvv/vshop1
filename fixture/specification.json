@@ -1,0 +1,18 @@
+[
+	{
+		"model": "main.Specification",
+		"pk": 1,
+		"fields": {
+			"name": "尺码",
+			"desc": "T恤"
+		}
+	},
+	{
+		"model": "main.Specification",
+		"pk": 2,
+		"fields": {
+			"name": "颜色",
+			"desc": "T恤"
+		}
+	}
+]

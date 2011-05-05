@@ -35,41 +35,35 @@ KISSY.use('imagezoom', function(S) {
 </div>
 <div class="right_side">
 	<div class="clearfix" id="goods_info">
-		<div class="goods_title">
-			<h5>ONE-T凡兔 春装新品2011新款 短袖T恤 日韩 男士t恤 字母图案</h5>
-		</div>
 		<div class="gallery">
 			<div class="booth">
-				<a href="#"><img id="img_booth" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg" src="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg_310x310.jpg"/></a>
+				<a href="#"><img id="img_booth" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/{{ data.goods.galleries.all.0.image }}.jpg" src="http://img01.taobaocdn.com/bao/uploaded/i1/{{ data.goods.galleries.all.0.image }}.jpg_310x310.jpg"/></a>
 			</div>
 			<ul class="img_thumbs clearfix" id="img_thumbs">
-				<li class="thumb_selected" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg">
+				{% for gallery in data.goods.galleries.all %}
+				<li class="{% if forloop.first %}thumb_selected{% endif %}" data-ks-imagezoom="http://img01.taobaocdn.com/bao/uploaded/i1/{{ gallery.image }}.jpg">
 				<div class="thumb_pic tb_s40">
-					<a href="#"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1RXB8XlNlXXcsZFZU_013511.jpg_40x40.jpg"></a>
+					<a href="#"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/{{ gallery.image }}.jpg_40x40.jpg"></a>
 				</div>
 				</li>
-				<li data-ks-imagezoom="http://img01.taobaocdn.com/imgextra/i1/24120068/T2mQBbXcXMXXXXXXXX_!!24120068.jpg">
-				<div class="thumb_pic tb_s40">
-					<a href="#"><img src="http://img01.taobaocdn.com/imgextra/i1/24120068/T2mQBbXcXMXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
-				</div>
-				</li>
-				<li data-ks-imagezoom="http://img01.taobaocdn.com/imgextra/i1/24120068/T2nQBbXb8MXXXXXXXX_!!24120068.jpg">
-				<div class="thumb_pic tb_s40">
-					<a href="#"><img src="http://img01.taobaocdn.com/imgextra/i1/24120068/T2nQBbXb8MXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
-				</div>
-				</li>
-				<li data-ks-imagezoom="http://img04.taobaocdn.com/imgextra/i4/24120068/T2.AFbXb4MXXXXXXXX_!!24120068.jpg">
-				<div class="thumb_pic tb_s40">
-					<a href="#"><img src="http://img04.taobaocdn.com/imgextra/i4/24120068/T2.AFbXb4MXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
-				</div>
-				</li>
-				<li data-ks-imagezoom="http://img03.taobaocdn.com/imgextra/i3/24120068/T2XkBbXbVMXXXXXXXX_!!24120068.jpg">
-				<div class="thumb_pic tb_s40">
-					<a href="#"><img src="http://img03.taobaocdn.com/imgextra/i3/24120068/T2XkBbXbVMXXXXXXXX_!!24120068.jpg_40x40.jpg"></a>
-				</div>
-				</li>
+				{% endfor %}
 			</ul>
 			<div class="blank5"></div>
+		</div>
+		<div class="goods_detail">
+			<div class="goods_title">
+				<h5>{{ data.goods.name }}</h5>
+			</div>
+			<ul class="goods_props clear fix">
+				<li><span>商品编号：</span>G49B7AF58591B6</li>
+				<li><span>货号：</span><span id="goodsBn">G49B7AF2072AF8-1</span></li>
+				<li><span>品　　牌：</span><a href="http://localhost:8080/?brand-15.html" target="_blank">G-Star</a></li>
+				<li><span>材质：</span><a href="http://localhost:8080/?gallery--tp,4_1,4_p,0-6.html" target="_blank">帆布</a></li>
+				<li><span>适合季节：</span><a href="http://localhost:8080/?gallery--tp,4_2,4_p,0-6.html" target="_blank">春秋季</a></li>
+				<li><span>鞋跟：</span><a href="http://localhost:8080/?gallery--tp,4_3,2_p,0-6.html" target="_blank">平底</a></li>
+				<li><span>鞋带：</span><a href="http://localhost:8080/?gallery--tp,4_4,0_p,0-6.html" target="_blank">系带</a></li>
+				<li><span>款式：</span><a href="http://localhost:8080/?gallery--tp,4_5,2_p,0-6.html" target="_blank">平头</a></li>
+			</ul>
 		</div>
 	</div>
 </div>

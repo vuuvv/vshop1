@@ -89,12 +89,44 @@ class Goods(models.Model):
 	is_new = models.BooleanField(default=False)
 	is_best = models.BooleanField(default=False)
 	is_hot = models.BooleanField(default=False)
+	properties = models.TextField(default="")
 
 	category = models.ForeignKey(Category, null=True, blank=True, related_name="goods")
 	brand = models.ForeignKey(Brand, null=True, blank=True, related_name="goods")
 	supplier = models.ForeignKey(Supplier, null=True, blank=True, related_name="goods")
 
 	objects = GoodsManager()
+
+class Product(models.Model):
+	sn = models.CharField(max_length=128)
+	price = models.FloatField(default=0.0)
+	cost = models.FloatField(default=0.0)
+	weight = models.FloatField(default=0.0)
+	count = models.IntegerField(default=0)
+	name = models.CharField(max_length=255)
+	disabled = models.BooleanField(default=False)
+	add_time = models.DateTimeField(default=datetime.now)
+	last_modified = models.DateTimeField(default=datetime.now)
+
+	goods = models.ForeignKey(Goods, related_name="products")
+
+class Gallery(models.Model):
+	desc = models.CharField(max_length=128, null=True, blank=True)
+	image = models.CharField(max_length=255)
+	order = models.IntegerField(default=0)
+
+	goods = models.ForeignKey(Goods, related_name="galleries")
+
+class Specification(models.Model):
+	name = models.CharField(max_length=128)
+	desc = models.CharField(max_length=128, null=True, blank=True)
+	order = models.IntegerField(default=0)
+
+class SpecItem(models.Model):
+	value = models.CharField(max_length=64)
+	properties = models.TextField(default="")
+	spec = models.ForeignKey(Specification, related_name="items")
+	order = models.IntegerField(default=0)
 
 class Cart(models.Model):
 	price = models.FloatField()
