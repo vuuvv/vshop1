@@ -21,6 +21,103 @@ KISSY.use('imagezoom', function(S) {
 				m.set('bigImageSrc', data);
 			}
 		});
+		S.Event.on("#goods_specs", "mouseenter", function() {
+			if (!S.DOM.hasClass(this, 'goods_specs_hover')) {
+				S.DOM.addClass(this, 'goods_specs_hover');
+			}
+		});
+		S.Event.on("#goods_specs", "mouseleave", function() {
+			if (S.DOM.hasClass(this, 'goods_specs_hover')) {
+				S.DOM.removeClass(this, 'goods_specs_hover');
+			}
+		});
+		{% autoescape off %}
+		var spec_match = {{ data.specitem }};
+		{% endautoescape %}
+
+		var get_selected = function() {
+			var rows = S.DOM.query(".spec_row");
+			var ret = {
+				id: [],
+				desc: []
+			};
+			S.each(rows, function(row) {
+				var value = S.DOM.attr(row, "data-select");
+				if (value) {
+					ret.id.push(parseInt(value.split(",")[0]));
+					ret.desc.push(value.split(",")[1]);
+				} else {
+					ret.id.push(null);
+					ret.desc.push(null);
+				}
+			});
+			return ret;
+		};
+
+		var show_selected = function() {
+			var descs = get_selected().desc;
+			var container = S.DOM.get("#show_select");
+			S.DOM.html(container, "");
+			for (var i = 0; i < descs.length; i++) {
+				var dom = S.DOM.create('<em class="show_spec">');
+				S.DOM.text(dom, descs[i]);
+				S.DOM.append(dom, container);
+			}
+		};
+
+		var check_enabled = function(rowid,) {
+			var items = S.DOM.query(".goods_spec_item");
+			var ids = get_selected().id;
+			for (var i = 0; i < ids.length; i++) {
+			}
+		};
+
+		S.Event.on(".goods_spec_item", "click", function(e) {
+			var row = S.DOM.parent(this, "ul");
+			if (S.DOM.hasClass(this, 'goods_spec_selected')){
+				S.DOM.removeClass(this, 'goods_spec_selected');
+				S.DOM.remove(S.DOM.next(this));
+				S.DOM.attr(row, "data-select", "");
+			} else if (!S.DOM.hasClass(this, 'lock')) {
+				var p = S.DOM.parent(this);
+				var siblings = S.DOM.siblings(p);
+				var myid = parseInt(S.DOM.attr(this, "data-value"));
+				var mysid = S.DOM.attr(row, "data-property");
+				S.each(siblings, function(item) {
+					var a = S.DOM.get(".goods_spec_item", item);
+					if (S.DOM.hasClass(a, 'goods_spec_selected')) {
+						S.DOM.removeClass(a, 'goods_spec_selected');
+						S.DOM.remove(S.DOM.get("i", item));
+					}
+				});
+				S.DOM.addClass(this, 'goods_spec_selected');
+				S.DOM.insertAfter(S.DOM.create('<i>&nbsp</i>'), this);
+				S.DOM.attr(row, "data-select", myid + "," + S.DOM.attr(this, "data-desc"));
+				var items = S.DOM.query(".goods_spec_item");
+				var new_items = [];
+				S.each(items, function(item) {
+					if (S.DOM.attr(S.DOM.parent(item, "ul"), "data-property") !== mysid)
+						new_items.push(item);
+				});
+				S.each(new_items, function(item) {
+					var id = parseInt(S.DOM.attr(item, "data-value"));
+					var enabled = false;
+					for (var i = 0; i < spec_match.length; i++) {
+						if (S.inArray(myid, spec_match[i]) && S.inArray(id, spec_match[i])) {
+							enabled = true;
+							break;
+						}
+					}
+					if (enabled) {
+						S.DOM.removeClass(item, 'lock');
+					} else {
+						S.DOM.addClass(item, 'lock');
+					}
+				});
+			}
+			show_selected();
+			e.preventDefault();
+		});
 	});
 });
 </script>
@@ -54,9 +151,9 @@ KISSY.use('imagezoom', function(S) {
 			<div class="goods_title">
 				<h5>{{ data.goods.name }}</h5>
 			</div>
-			<ul class="goods_props clear fix">
-				<li><span>商品编号：</span>G49B7AF58591B6</li>
-				<li><span>货号：</span><span id="goodsBn">G49B7AF2072AF8-1</span></li>
+			<ul class="goods_props clearfix">
+				<li><span>商品编号：</span>G49B7AF58591B6</li><li><span>货号：</span>
+				<span id="goodsBn">G49B7AF2072AF8-1</span></li>
 				<li><span>品　　牌：</span><a href="http://localhost:8080/?brand-15.html" target="_blank">G-Star</a></li>
 				<li><span>材质：</span><a href="http://localhost:8080/?gallery--tp,4_1,4_p,0-6.html" target="_blank">帆布</a></li>
 				<li><span>适合季节：</span><a href="http://localhost:8080/?gallery--tp,4_2,4_p,0-6.html" target="_blank">春秋季</a></li>
@@ -64,6 +161,44 @@ KISSY.use('imagezoom', function(S) {
 				<li><span>鞋带：</span><a href="http://localhost:8080/?gallery--tp,4_4,0_p,0-6.html" target="_blank">系带</a></li>
 				<li><span>款式：</span><a href="http://localhost:8080/?gallery--tp,4_5,2_p,0-6.html" target="_blank">平头</a></li>
 			</ul>
+			<ul class="goods_price list">
+				<li><span>市场价：</span><i class="mktprice1">￥{{ data.goods.market_price}}</i></li>
+				<li><span>销售价：</span><span class="price1">￥{{ data.goods.shop_price }}</span></li>
+			</ul>
+			<div class="goods_specs" id="goods_specs">
+				<div class="goods_specs_inner">
+					{% for item in data.spec %}
+					<dl class="goods_spec clearfix">
+						<dt>{{ item.name }}：</dt>
+						<dd>
+						<ul data-property="{{ item.id }}" data-select="" class="spec_row clearfix">
+							{% for i in item.items.all %}
+							<li><a data-value="{{ i.id }}" data-desc="{{ i.value }}" class="goods_spec_item" href="#"><span>{{ i.value }}</span></a></li>
+							{% endfor %}
+						</ul>
+						</dd>
+					</dl>
+					{% endfor %}
+					<dl class="goods_amount clearfix">
+						<dt>购买数量：</dt>
+						<dd>
+						<input id="J_IptAmount" class="tb-text" value="1" maxlength="8" type="text">件
+						<em>(库存<span id="J_SpanStock" class="tb-count">5353</span>件)</em>
+						</dd>
+					</dl>
+					<dl class="goods_choice clearfix">
+						<dt>请选择：</dt>
+						<dd id="show_select">
+						{% for item in data.spec %}
+						<em>{{ item.name }}</em>
+						{% endfor %}
+						</dd>
+					</dl>
+					<div class="goods_action clearfix">
+						<div class="goods_btn_add"><a href="#" title="加入购物车" id="J_LinkAdd">加入购物车<b></b></a></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

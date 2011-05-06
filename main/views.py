@@ -2,9 +2,10 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response
 from django.conf import settings
 from utils import get_template
-from models import Nav, Category, Goods
+from models import Nav, Category, Goods, Specification
 from tree import Tree
 import forms
+import json
 import logging
 
 TEMPLATE = "ecshop"
@@ -22,13 +23,16 @@ def index(request):
 def goods_detail(request, id):
 	nav = Nav.objects.all()
 	goods = Goods.objects.get(id=id)
-	logging.info(goods.name)
+	props = json.loads(goods.properties)
+	spec = Specification.objects.filter(id__in=props["spec"])
 	data = {
 		"nav_top": [n for n in nav if n.position == "top"],
 		"nav_middle": [n for n in nav if n.position == "middle"],
 		"nav_bottom": [n for n in nav if n.position == "bottom"],
 		"categories": Tree(list(Category.objects.all().values())),
 		"goods": goods,
+		"spec": spec,
+		"specitem": json.dumps(props["specitem"]),
 	}
 	return render_to_response(get_template("goods_detail.html"), {"data": data})
 

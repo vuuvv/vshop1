@@ -95,5 +95,201 @@
 
 .goods_detail {
 	float: left;
-	margin-left: 10px;
+	margin-left: 15px;
+	width: 400px;
+}
+
+.goods_props {
+	border-bottom: 1px dotted #A6A6A6;
+	border-top: 1px dotted #A6A6A6;
+	font-family: Tahoma, Verdana, Arial;
+	margin: 0 0 5px;
+	padding: 10px 0;
+}
+
+.goods_props li {
+	color: #000;
+	float: left;
+	overflow: hidden;
+	padding: 2px 0;
+	white-space: nowrap;
+	width: 49%;
+}
+
+.goods_props span {
+	padding-right: 5px;
+}
+
+.goods_props a {
+	color: #464646;
+	text-decoration: none;
+}
+
+.goods_price span {
+	font-size: 14px;
+}
+
+.goods_price i {
+	text-decoration: line-through;
+}
+
+.price1 {
+	color: #FF6600;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.goods_specs {
+	border: 1px solid #EDEDED;
+	margin-bottom: 10px;
+	padding: 1px;
+	display: block;
+}
+
+.goods_specs_hover {
+	border: 1px solid #FCBB29;
+}
+
+.goods_specs_inner {
+	background: none repeat scroll 0 0 #F9F9F9;
+	padding: 8px;
+	display: block;
+}
+
+.goods_specs_hover .goods_specs_inner {
+	background: #FFF3D9;
+}
+
+.goods_specs dl {
+	padding-bottom: 6px;
+	vertical-align: middle;
+}
+
+.goods_specs dt {
+	text-align: right;
+	width: 62px;
+	display: inline;
+	float: left;
+}
+
+.goods_specs dd {
+	width: 318px;
+	display: inline;
+	float: left;
+}
+
+.goods_specs li {
+	background: #fff;
+	display: inline;
+	float: left;
+	line-height: 20px;
+	margin: 0 4px 4px 0;
+	padding: 1px;
+	position: relative;
+	vertical-align: middle;
+	width: auto;
+}
+
+.goods_spec_item {
+	background: #fff;
+	border: 1px solid #c8c9cd;
+	color: #000;
+	display: inline-block;
+	min-width: 10px;
+	padding: 0 6px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	outline: medium none;
+}
+
+.goods_spec .lock {
+	cursor: not-allowed !important;
+}
+
+.goods_spec .lock:hover {
+	border: 2px solid #ccc;
+}
+
+.goods_spec .lock span {
+	border-color: #fff !important;
+	color: #ccc;
+}
+
+.goods_spec_selected, .goods_specs li a:hover {
+	border: 2px solid #ff6701;
+	margin: -1px;
+}
+
+.goods_specs li i {
+	background: url("images/btn_bg.png") 0 -26px;
+	bottom: 0;
+	height: 12px;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	text-indent: -9999em;
+	width: 12px;
+}
+
+.goods_amount input{
+	background: #fff -77px 0;
+	border: 1px solid #A7A6AA;
+	color: #666;
+	font-size: 12x;
+	height: 16px;
+	margin-right: 2px;
+	padding: 3px 2px 0 3px;
+	width: 52px;
+}
+
+.goods_choice {
+	font-weight: bold;
+}
+
+#show_select em {
+	padding-left: 10px;
+}
+
+em.show_spec {
+	color: red;
+}
+
+.goods_action {
+	clear: both;
+	margin-left: 62px;
+	position: relative;
+}
+
+.goods_btn_add {
+	display: inline;
+	float: left;
+	margin-right: 20px;
+}
+
+.goods_btn_add a {
+	font: bold 18px/36px arial;
+	position: relative;
+	text-align: center;
+	text-indent: 0;
+	display: inline;
+	float: left;
+	height: 36px;
+	margin-right: 0;
+	overflow: hidden;
+	width: 127px;
+}
+
+.goods_btn_add a b {
+	background: url("images/btn_bg.png") -254px -108px;
+	cursor: pointer;
+	left: 0;
+	top: 0;
+	position: absolute;
+	display: inline;
+	float: left;
+	height: 36px;
+	margin-right: 0;
+	text-indent: -200px;
+	width: 127px;
 }

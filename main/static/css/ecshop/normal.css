@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form, img, p {
 	padding: 0;
 }
 
+em {
+	font-style: normal;
+}
+
 h3 {
 	background: url("images/h3_title.gif") repeat-x scroll left top transparent;
 	font-size: 12px;
@@ -96,6 +100,19 @@ h3 span {
 	height: 5px;
 	line-height: 5px;
 	visibility: hidden;
+}
+
+ul.list {
+	margin: 10px 0;
+}
+
+ul.list li {
+	background: url("images/ra.gif") no-repeat scroll 0 8px transparent;
+	border-bottom: 1px solid #EFEFEF;
+	color: #666;
+	display: block;
+	line-height: 23px;
+	padding-left: 15px;
 }
 
 .input_bg {

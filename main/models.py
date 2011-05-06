@@ -104,6 +104,7 @@ class Product(models.Model):
 	weight = models.FloatField(default=0.0)
 	count = models.IntegerField(default=0)
 	name = models.CharField(max_length=255)
+	desc = models.CharField(max_length=128)
 	disabled = models.BooleanField(default=False)
 	add_time = models.DateTimeField(default=datetime.now)
 	last_modified = models.DateTimeField(default=datetime.now)

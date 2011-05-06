@@ -1,0 +1,68 @@
+[
+	{
+		"model": "main.Product",
+		"pk": 1,
+		"fields": {
+			"sn": "G49B8964FDCF32-1",
+			"price": 278.00,
+			"count": 99,
+			"desc": "170/(M), 浅蓝",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Product",
+		"pk": 2,
+		"fields": {
+			"sn": "G49B8964FDCF32-2",
+			"price": 278.00,
+			"count": 99,
+			"desc": "170/(M), 白色",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Product",
+		"pk": 3,
+		"fields": {
+			"sn": "G49B8964FDCF32-3",
+			"price": 278.00,
+			"count": 99,
+			"desc": "170/(M), 黄绿",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Product",
+		"pk": 4,
+		"fields": {
+			"sn": "G49B8964FDCF32-4",
+			"price": 278.00,
+			"count": 99,
+			"desc": "175/(L), 浅蓝",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Product",
+		"pk": 5,
+		"fields": {
+			"sn": "G49B8964FDCF32-5",
+			"price": 278.00,
+			"count": 99,
+			"desc": "175/(L), 白色",
+			"goods": 1
+		}
+	},
+	{
+		"model": "main.Product",
+		"pk": 6,
+		"fields": {
+			"sn": "G49B8964FDCF32-6",
+			"price": 278.00,
+			"count": 99,
+			"desc": "180/(XL), 白色",
+			"goods": 1
+		}
+	}
+]

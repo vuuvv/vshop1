@@ -4,13 +4,13 @@
 		"pk": 1,
 		"fields": {
 			"name": "ONE-T凡兔 男士t恤",
-			"sn": "ECS000000",
+			"sn": "G49B8964FDCF32",
 			"count": "1",
 			"weight": 0.110,
-			"market_price": 1665.60,
-			"shop_price": 1388.00,
+			"market_price": 289.00,
+			"shop_price": 278.00,
 			"category": 4,
-			"properties": "{'spec':[1,2], 'specitem': [[1,4],[1,5],[1,6],[2,4],[2,5],[3,5]]}"
+			"properties": '{"spec":[1,2], "specitem": [[1,4,"G49B8964FDCF32-1"],[1,5,"G49B8964FDCF32-2"],[1,6,"G49B8964FDCF32-3"],[2,4,"G49B8964FDCF32-4"],[2,5,"G49B8964FDCF32-5"],[3,5,"G49B8964FDCF32-6"]]}'
 		}
 	},
 	{
