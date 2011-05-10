@@ -65,11 +65,69 @@ KISSY.use('imagezoom', function(S) {
 			}
 		};
 
-		var check_enabled = function(rowid,) {
-			var items = S.DOM.query(".goods_spec_item");
+		var get_first_match = function() {
 			var ids = get_selected().id;
-			for (var i = 0; i < ids.length; i++) {
+			var ret = null;
+			for (var i = 0; i < spec_match.length; i++) {
+				var item = spec_match[i];
+				var m = true;
+				for (var j = 0; j < ids.length; j++) {
+					var id = ids[j];
+					if (id !== null && !S.inArray(id, item)) {
+						m = false;
+						break;
+					}
+				}
+				if (m) 
+					ret = item[item.length-1];
 			}
+			if (ret) {
+				console.log(ret);
+				S.DOM.text(S.DOM.get("#product_sn"), ret);
+			}
+		};
+
+		var check_enabled = function() {
+			var items = S.DOM.query(".goods_spec_item");
+			var rows = S.DOM.query(".spec_row");
+			var ids = get_selected().id;
+			for (var i = 0; i < rows.length; i++) {
+				var row = rows[i];
+				var items = S.DOM.query(".goods_spec_item", row);
+				for (var j = 0; j < items.length; j++) {
+					var item = items[j];
+					var id = parseInt(S.DOM.attr(item, "data-value"));
+					var enabled = _check_enabled(i, id, ids, spec_match);
+					if (enabled) {
+						S.DOM.removeClass(item, 'lock');
+					} else {
+						S.DOM.addClass(item, 'lock');
+					}
+				}
+			}
+		};
+
+		var _check_enabled = function(row, id, selected, matches) {
+			var enabled = true;
+			for (var i = 0; i < matches.length; i++) {
+				enabled = true;
+				var m = matches[i];
+				var s = [id];
+				for (var j = 0; j < selected.length; j++) {
+					if (j === row || selected[j] === null)
+						continue;
+					s.push(selected[j]);
+				}
+				for (var j = 0; j < s.length; j++) {
+					if (!S.inArray(s[j], m)) {
+						enabled = false;
+						break;
+					}
+				}
+				if (enabled)
+					return true;
+			}
+			return false;
 		};
 
 		S.Event.on(".goods_spec_item", "click", function(e) {
@@ -108,14 +166,11 @@ KISSY.use('imagezoom', function(S) {
 							break;
 						}
 					}
-					if (enabled) {
-						S.DOM.removeClass(item, 'lock');
-					} else {
-						S.DOM.addClass(item, 'lock');
-					}
 				});
 			}
 			show_selected();
+			check_enabled();
+			get_first_match();
 			e.preventDefault();
 		});
 	});
@@ -153,7 +208,7 @@ KISSY.use('imagezoom', function(S) {
 			</div>
 			<ul class="goods_props clearfix">
 				<li><span>商品编号：</span>G49B7AF58591B6</li><li><span>货号：</span>
-				<span id="goodsBn">G49B7AF2072AF8-1</span></li>
+				<span id="product_sn">G49B7AF2072AF8-1</span></li>
 				<li><span>品　　牌：</span><a href="http://localhost:8080/?brand-15.html" target="_blank">G-Star</a></li>
 				<li><span>材质：</span><a href="http://localhost:8080/?gallery--tp,4_1,4_p,0-6.html" target="_blank">帆布</a></li>
 				<li><span>适合季节：</span><a href="http://localhost:8080/?gallery--tp,4_2,4_p,0-6.html" target="_blank">春秋季</a></li>
